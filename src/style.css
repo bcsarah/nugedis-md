@@ -1,15 +1,16 @@
 * { color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: #101123;
+    background-color: #ffafcd;
 }
 
 h1 {
     font-size: 75px;
-    line-height: 0.7;
+    line-height: 0.5;
 }
 
 h2 {
     font-size: 25px;
+    line-height: 0.5;
 }
 
 p {
