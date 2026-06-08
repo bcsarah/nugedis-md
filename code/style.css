@@ -16,11 +16,11 @@ body {
 
 /* Cabeçalho */
 header {
-    background: linear-gradient(135deg, #6a1b9a, #8e24aa, #ab47bc);
+    background: linear-gradient(135deg, #ff155b, #ff4980, #ff789a);
     color: white;
     text-align: center;
     padding: 2rem 1rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px #0000001a;
 }
 
 header img {
@@ -28,7 +28,7 @@ header img {
     width: 100%;
     height: auto;
     margin-bottom: 1rem;
-    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+    filter: drop-shadow(0 2px 5px #00000033);
 }
 
 header h1 {
@@ -46,13 +46,10 @@ header h2 {
 
 /* Navegação */
 nav {
-    background-color: #4a148c;
+    background-color: #d42c64;
     padding: 0.8rem;
     text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px #0000001a;
 }
 
 nav a {
@@ -67,8 +64,8 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #ff80ab;
-    color: #4a148c;
+    background-color: #ffa1c1;
+    color: #d42c64;
 }
 
 /* Container */
@@ -161,40 +158,14 @@ footer {
     font-size: 0.9rem;
 }
 
-footer a {
+a {
     color: #ffab91;
     text-decoration: none;
-    margin: 0 0.5rem;
 }
 
 footer a:hover {
     text-decoration: underline;
     color: #ff80ab;
-}
-
-/* Botão topo */
-#btnTopo {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #6a1b9a;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    font-size: 22px;
-    cursor: pointer;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    transition: background 0.3s;
-    z-index: 200;
-}
-
-#btnTopo:hover {
-    background-color: #ff4081;
 }
 
 /* Responsividade */
