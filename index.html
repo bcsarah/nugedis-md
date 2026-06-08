@@ -4,39 +4,95 @@
 <!-- Head -->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>NUGEDIS MD | Núcleo de Gênero, Diversidade e Sexualidade</title>
+    
+    <!-- CSS Externo -->
     <link rel="stylesheet" href="code/style.css">
-
-    <title>Nugedis MD</title>
 </head>
 
 <!-- Body -->
 <body>
-    <center>
-    <!-- Header -->
-    <header>
-        <!-- Logo -->
-        <img src="images/logo-branca.png" alt="Banner Nugedis MD" width="250px">
 
+    <!-- Header com imagem -->
+    <header>
+        <img src="images/logo-branca.png" alt="Logo NUGEDIS Marechal Deodoro">
         <h1>NUGEDIS</h1>
-        <h2>Núcleo de Gênero, Diversidade e Eexualidade</h2>
-        <h2>Campus Marechal Deodoro (MD)</h2>
+        <h2>Núcleo de Gênero, Diversidade e Sexualidade</h2>
+        <h2>Campus Marechal Deodoro (MD) - IFAL</h2>
     </header>
 
+    <!-- Navegador pelo Site -->
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#atividades">Atividades</a>
+        <a href="#contato">Contato</a>
+        <a href="#links">Links Oficiais</a>
+    </nav>
+
     <!-- Main -->
-    <main>
-        <br>
-        <p>Venha conhecer os nosso núcleo e nossas atividades!</p>
-        <br>
+    <main class="container">
+        <!-- Sobre -->
+        <section id="sobre" class="card">
+            <h3>🌸 Sobre</h3>
+
+            <p>O Núcleo de Gênero, Diversidade e Sexualidade (NUGEDIS) do Campus Marechal Deodoro é um espaço de acolhimento, formação e luta contra todas as formas de discriminação. Trabalhamos para promover respeito à diversidade sexual, identidades de gênero e para construir um ambiente escolar mais inclusivo e seguro para todes.</p>
+            <p><strong>Venha participar!</strong> Todas as pessoas são bem-vindas, independentemente de orientação sexual, identidade de gênero ou expressão. Juntos/as/es, fortalecemos o respeito e combatemos o preconceito.</p>
+            <button class="btn" id="saibaMaisBtn">📢 Quero saber mais</button>
+        </section>
+
+        <!-- Atividades -->
+        <section id="atividades" class="card">
+            <h3>✨ Próximas Atividades</h3>
+
+            <ul style="margin-left: 1.5rem;">
+                <li>🧡 Roda de Conversa: "Identidade de Gênero na Escola" - 15/04</li>
+                <li>💜 Oficina de produção de zines sobre diversidade - 22/04</li>
+                <li>🌈 Cine Debate: Filme "Alice Júnior" - 29/04</li>
+                <li>📚 Grupo de Estudos sobre teorias queer e decoloniais (quinzenal)</li>
+            </ul>
+            <p style="margin-top: 1rem;">Acompanhe o Instagram para mais detalhes e inscrições!</p>
+        </section>
+
+        <!-- Links Oficiais -->
+        <section id="links" class="card">
+            <h3>🔗 Acesse nossas redes e site oficial</h3>
+
+            <div class="social-grid">
+                <a href="https://www.instagram.com/nugedis.marechal" target="_blank" class="social-link">📸 Instagram do NUGEDIS</a>
+                <a href="https://www.instagram.com/ifalmarechal/" target="_blank" class="social-link">🏫 Instagram do Campus</a>
+                <a href="https://www2.ifal.edu.br/campus/marechal" target="_blank" class="social-link">🌐 Site Oficial do Campus</a>
+            </div>
+            <p style="margin-top: 1rem;">Fique por dentro de editais, eventos e notícias através dos canais acima.</p>
+        </section>
+
+        <!-- Contato -->
+        <section id="contato" class="card">
+            <h3>💬 Participe do NUGEDIS</h3>
+
+            <p>Estamos abertos a estudantes, servidores e comunidade externa. Você pode contribuir com ideias, arte, pesquisa ou simplesmente participar das reuniões.</p>
+            <p><strong>Reuniões:</strong> toda quarta-feira, 13h, na sala 15 do bloco pedagógico.</p>
+            <p><strong>Contato direto:</strong> envie mensagem para nosso Instagram ou procure a coordenação no campus.</p>
+            <button id="agendarVisita" class="btn">📅 Quero receber informações</button>
+        </section>
     </main>
 
-    <!-- Footer-->
     <footer>
-        <!-- Lista de Contatos -->
-        <a href="https://www.instagram.com/nugedis.marechal" target="_blank">Instagram do Núcleo</a><br>
-        <a href="https://www.instagram.com/ifalmarechal/" target="_blank">Instagram do Campus</a><br>
-        <a href="https://www2.ifal.edu.br/campus/marechal" target="_blank">Site do Campus</a><br>
+        <p>NUGEDIS - Núcleo de Gênero, Diversidade e Sexualidade | IFAL Campus Marechal Deodoro</p>
+        <p>Luta contra LGBTfobia, racismo, machismo e todas as opressões. 🌈🏳️‍⚧️🏳️‍🌈</p>
+        <p>
+            <a href="#">Acessibilidade</a> | 
+            <a href="#">Mapa do site</a> | 
+            <a href="https://www2.ifal.edu.br/campus/marechal" target="_blank">Site institucional</a>
+        </p>
+        <p style="margin-top: 0.8rem;">&copy; 2025 - Desenvolvido por estudantes do NUGEDIS</p>
     </footer>
+
+    <button id="btnTopo" title="Voltar ao topo">↑</button>
+
+    <!-- JS Externo -->
+    <script src="code/script.js"></script>
+
 </body>
 
 </html>

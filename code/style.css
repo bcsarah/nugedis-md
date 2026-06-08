@@ -1,19 +1,220 @@
-* { 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9edf2 100%);
+    color: #1e2a3e;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(135deg, #6a1b9a, #8e24aa, #ab47bc);
     color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: #ffafcd;
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-h1 {
-    font-size: 75px;
-    line-height: 0.5;
+header img {
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
 }
 
-h2 {
-    font-size: 25px;
-    line-height: 0.5;
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
 }
 
-p {
-    font-size: 25px;
+header h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0.3rem 0;
+}
+
+/* Navegação */
+nav {
+    background-color: #4a148c;
+    padding: 0.8rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    transition: background 0.3s;
+    display: inline-block;
+    font-weight: 500;
+}
+
+nav a:hover {
+    background-color: #ff80ab;
+    color: #4a148c;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    flex: 1;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: #6a1b9a;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid #ff80ab;
+    padding-left: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #8e24aa;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.1s;
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ff4081;
+    transform: scale(1.02);
+}
+
+/* Links sociais */
+.social-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+.social-link {
+    background: #f3e5f5;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #4a148c;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+    border: 1px solid #ce93d8;
+}
+
+.social-link:hover {
+    background: #8e24aa;
+    color: white;
+    border-color: #8e24aa;
+    transform: translateY(-2px);
+}
+
+/* Rodapé */
+footer {
+    background-color: #1e2a3e;
+    color: #cfd8dc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #ffab91;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #ff80ab;
+}
+
+/* Botão topo */
+#btnTopo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: background 0.3s;
+    z-index: 200;
+}
+
+#btnTopo:hover {
+    background-color: #ff4081;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    header h2 {
+        font-size: 1rem;
+    }
+    nav a {
+        margin: 0.3rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    .social-link {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    .card h3 {
+        font-size: 1.4rem;
+    }
 }
