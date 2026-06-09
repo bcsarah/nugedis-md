@@ -1,0 +1,60 @@
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    flex: 1;
+}
+
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 25px var(--sombra-card);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px var(--sombra-card);
+}
+
+.card h3 {
+    color: var(--violeta);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid var(--purpura);
+    padding-left: 1rem;
+}
+
+
+/* Links sociais */
+.social-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+.social-link {
+    color: var(--purpura-claro);
+    background: #f3e5f5;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.social-link:hover {
+    background-color: var(--purpura-claro);
+    color: white;
+    transform: translateY(-2px);
+}

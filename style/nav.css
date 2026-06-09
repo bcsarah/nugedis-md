@@ -1,0 +1,23 @@
+/* Navegação */
+nav {
+    background-color: var(--purpura);
+    padding: 0.8rem;
+    text-align: center;
+    box-shadow: 0 2px 8px var(--sombra);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    transition: background 0.3s;
+    display: inline-block;
+    font-weight: 500;
+}
+
+nav a:hover {
+    background-color: #ffa1c1;
+    color: var(--purpura);
+}
