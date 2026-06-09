@@ -128,6 +128,89 @@ nav a:hover {
 }
 
 
+/* Equipe */
+.categoria-equipe {
+    margin-bottom: 30px;
+}
+
+.titulo-coordenadores {
+    color: #6a1b9a;
+    margin: 20px 0 15px 0;
+    font-size: 1.4rem;
+    border-left: 4px solid #ab47bc;
+    padding-left: 15px;
+}
+
+.titulo-monitores {
+    color: #c2185b;
+    margin: 30px 0 15px 0;
+    font-size: 1.4rem;
+    border-left: 4px solid #f06292;
+    padding-left: 15px;
+}
+
+.membro {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+.membro-img {
+    flex-shrink: 0;
+}
+
+.membro-img img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Bordas diferentes por categoria */
+.categoria-equipe:first-child .membro-img img {
+    border: 3px solid #ab47bc; /* Roxo para coordenadores */
+}
+
+.categoria-equipe:last-child .membro-img img {
+    border: 3px solid #f06292; /* Rosa para monitores */
+}
+
+.membro-info {
+    flex: 1;
+}
+
+.membro-info h4 {
+    color: #4a148c;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.membro-info p {
+    color: #333;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .membro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .membro-img img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .membro-info p {
+        text-align: center;
+    }
+}
+
+
 /* Links sociais */
 .social-grid {
     display: flex;
