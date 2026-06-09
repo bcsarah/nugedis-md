@@ -1,4 +1,4 @@
-/* Root */
+/* All */
 :root {
     --purpura: #d42c64;
     --purpura-escuro: #993f5d;
@@ -12,7 +12,6 @@
     --sombra-card: #00000015;
 }
 
-/* All */
 * {
     margin: 0;
     padding: 0;
@@ -38,6 +37,7 @@ a:hover {
     text-decoration: underline;
     color: var(--purpura-escuro);
 }
+
 
 /* Cabeçalho */
 header {
@@ -69,6 +69,7 @@ header h2 {
     margin: 0.3rem 0;
 }
 
+
 /* Navegação */
 nav {
     background-color: var(--purpura);
@@ -93,6 +94,7 @@ nav a:hover {
     color: var(--purpura);
 }
 
+
 /* Container */
 .container {
     max-width: 1200px;
@@ -100,6 +102,7 @@ nav a:hover {
     padding: 2rem 1.5rem;
     flex: 1;
 }
+
 
 /* Cards */
 .card {
