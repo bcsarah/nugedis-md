@@ -1,4 +1,4 @@
-/* All */
+/* ===== GERAIS ===== */
 :root {
     --purpura: #d42c64;
     --purpura-escuro: #993f5d;
@@ -19,7 +19,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Verdana', sans-serif;
     background: linear-gradient(135deg, #f5f7fa 0%, #e9edf2 100%);
     color: var(--preto);
     line-height: 1.6;
@@ -39,7 +39,7 @@ a:hover {
 }
 
 
-/* Cabeçalho */
+/* ===== HEADER ===== */
 header {
     background: linear-gradient(100deg, var(--purpura), var(--purpura-intermediario), var(--purpura-claro));
     color: white;
@@ -70,7 +70,7 @@ header h2 {
 }
 
 
-/* Navegação */
+/* ===== NAVEGADOR ===== */
 nav {
     background-color: var(--purpura);
     padding: 0.8rem;
@@ -95,7 +95,7 @@ nav a:hover {
 }
 
 
-/* Container */
+/* ===== CONTAINER ===== */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -157,7 +157,7 @@ nav a:hover {
 }
 
 
-/* Grid para membros (funciona para coordenadores e monitores) */
+/* ===== EQUIPE ===== */
 .grid-membros {
     display: grid;
     grid-template-columns: repeat(2, minmax(280px, 1fr));
@@ -165,7 +165,13 @@ nav a:hover {
     margin-top: 20px;
 }
 
-/* Card padrão para todos os membros */
+.grid-membros:last-of-type .card-membro:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #fce4ec 100%);
+    border-color: #ff4081;
+    box-shadow: 0 15px 35px rgba(192, 28, 104, 0.2);
+}
+
+/* Card */
 .card-membro {
     background: linear-gradient(135deg, #ffffff 0%, #faf5ff 100%);
     border-radius: 20px;
@@ -176,7 +182,6 @@ nav a:hover {
     border: 1px solid #e1bee7;
 }
 
-/* Efeito hover no card */
 .card-membro:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 35px rgba(106, 27, 154, 0.2);
@@ -184,14 +189,8 @@ nav a:hover {
     border-color: #ab47bc;
 }
 
-.grid-membros:last-of-type .card-membro:hover {
-    background: linear-gradient(135deg, #ffffff 0%, #fce4ec 100%);
-    border-color: #ff4081;
-    box-shadow: 0 15px 35px rgba(192, 28, 104, 0.2);
-}
-
-/* Estilos das imagens */
-.foto-membro {
+/* Foto */
+.card-membro img {
     width: 150px;
     height: 150px;
     object-fit: cover;
@@ -202,24 +201,14 @@ nav a:hover {
     display: block;
 }
 
-/* Efeito hover na imagem */
-.card-membro:hover .foto-membro {
+.card-membro:hover img {
     transform: scale(1.08) rotate(2deg);
     border-color: #ff4081;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Imagem dos monitores */
-.grid-membros:last-of-type .foto-membro {
-    border-color: #f06292;
-}
-
-.grid-membros:last-of-type .card-membro:hover .foto-membro {
-    border-color: #ff4081;
-}
-
-/* Nome do membro */
-.nome-membro {
+/* Nome */
+.card-membro h4{
     font-size: 1.2rem;
     font-weight: bold;
     transition: all 0.3s ease;
@@ -228,47 +217,29 @@ nav a:hover {
     margin: 10px 0;
 }
 
-/* Cor do nome por categoria */
-.card-membro .nome-membro {
+.card-membro h4 {
     color: #4a148c;
 }
 
-.grid-membros:last-of-type .nome-membro {
+.grid-membros:last-of-type h4 {
     color: #c2185b;
 }
 
-/* Efeito hover no nome */
-.card-membro:hover .nome-membro {
+.card-membro:hover h4 {
     color: #ff4081;
     transform: translateY(-3px);
 }
 
-/* Linha animada no nome */
-.card-membro:hover .nome-membro::after {
-    content: '';
-    bottom: -8px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, #ab47bc, #ff4081);
-    border-radius: 2px;
-}
-
-/* Descrição do membro */
-.descricao-membro {
+/* Descrição */
+.card-membro p {
     color: #555;
     line-height: 1.5;
     font-size: 0.9rem;
     margin-top: 6px;
 }
 
-/* Efeito hover na descrição */
-.card-membro:hover .descricao-membro {
-    color: #2c3e50;
-}
 
-
-/* Rodapé */
+/* ===== Rodapé ====== */
 footer {
     background-color: #1e2a3e;
     color: #cfd8dc;
