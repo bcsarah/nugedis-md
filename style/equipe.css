@@ -1,130 +1,109 @@
-.titulo-coordenador, 
-.titulo-monitor {
-    margin: 20px 0 15px 0;
-    font-size: 1.4rem;
-    padding-left: 15px;
+/* Grid para membros (funciona para coordenadores e monitores) */
+.grid-membros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
 }
 
-.titulo-coordenador {
-    color: var(--purpura-escuro, #6a1b9a);
-    border-left: 4px solid var(--purpura-claro, #ab47bc);
-}
-
-.titulo-monitor {
-    color: #c2185b;
-    border-left: 4px solid var(--rosa-claro, #f06292);
-    margin-top: 30px;
-}
-
-.membro {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
-    align-items: flex-start;
-    
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 15px;
+/* Card padrão para todos os membros */
+.card-membro {
+    background: linear-gradient(135deg, #ffffff 0%, #faf5ff 100%);
     border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    border: 1px solid #e1bee7;
 }
 
-.membro:hover {
+/* Efeito hover no card */
+.card-membro:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(106, 27, 154, 0.25);
-    background: linear-gradient(135deg, #faf5ff 0%, #ffffff 100%);
+    box-shadow: 0 15px 35px rgba(106, 27, 154, 0.2);
+    background: linear-gradient(135deg, #ffffff 0%, #f3e5f5 100%);
+    border-color: #ab47bc;
 }
 
-.foto-coordenador, .foto-membro {
+.grid-membros:last-of-type .card-membro:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #fce4ec 100%);
+    border-color: #ff4081;
+    box-shadow: 0 15px 35px rgba(192, 28, 104, 0.2);
+}
+
+/* Estilos das imagens */
+.foto-membro {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    border-radius: 25px;
-    flex-shrink: 0;
-    
-    /* Transição para hover */
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    border: 3px solid #ab47bc;
     transition: all 0.4s ease;
+    display: block;
 }
 
-.membro:hover .foto-coordenador, .membro:hover .foto-membro {
+/* Efeito hover na imagem */
+.card-membro:hover .foto-membro {
     transform: scale(1.08) rotate(2deg);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    filter: brightness(1.05) saturate(1.1);
+    border-color: #ff4081;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.foto-coordenador {
-    border: 3px solid var(--purpura-claro, #ab47bc);
+/* Imagem dos monitores */
+.grid-membros:last-of-type .foto-membro {
+    border-color: #f06292;
 }
 
-.foto-membro {
-    border: 3px solid var(--purpura-escuro, #6a1b9a);
+.grid-membros:last-of-type .card-membro:hover .foto-membro {
+    border-color: #ff4081;
 }
 
-.membro:hover .foto-coordenador {
-    border-color: var(--rosa, #ff4081);
-}
-
-.membro:hover .foto-membro {
-    border-color: var(--rosa-claro, #f06292);
-}
-
-.membro div {
-    flex: 1;
-}
-
-.membro h4 {
-    color: var(--purpura, #4a148c);
-    margin-bottom: 10px;
-    font-size: 1.8rem;
+/* Nome do membro */
+.nome-membro {
+    font-size: 1.2rem;
+    font-weight: bold;
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
+    margin: 10px 0;
 }
 
-.membro:hover h4 {
-    color: var(--rosa, #ff4081);
-    transform: translateX(8px);
+/* Cor do nome por categoria */
+.card-membro .nome-membro {
+    color: #4a148c;
 }
 
-.membro:hover h4::after {
+.grid-membros:last-of-type .nome-membro {
+    color: #c2185b;
+}
+
+/* Efeito hover no nome */
+.card-membro:hover .nome-membro {
+    color: #ff4081;
+    transform: translateY(-3px);
+}
+
+/* Linha animada no nome */
+.card-membro:hover .nome-membro::after {
     content: '';
-    position: absolute;
     bottom: -8px;
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, var(--purpura-claro, #ab47bc), var(--rosa, #ff4081));
+    background: linear-gradient(90deg, #ab47bc, #ff4081);
     border-radius: 2px;
-    animation: linhaAnimada 0.4s ease;
 }
 
-.membro p {
-    color: #333;
+/* Descrição do membro */
+.descricao-membro {
+    color: #555;
     line-height: 1.5;
-    margin: 0;
-    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    margin-top: 6px;
 }
 
-.membro:hover p {
+/* Efeito hover na descrição */
+.card-membro:hover .descricao-membro {
     color: #2c3e50;
-    transform: translateX(5px);
-}
-
-@keyframes linhaAnimada {
-    0% {
-        width: 0;
-        opacity: 0;
-    }
-    50% {
-        width: 50%;
-        opacity: 0.5;
-    }
-    100% {
-        width: 100%;
-        opacity: 1;
-    }
-}
-
-.membro:active {
-    transform: translateY(-4px);
-    transition: all 0.05s ease;
 }
