@@ -45,7 +45,7 @@ header {
     color: white;
     text-align: center;
     padding: 2rem 1rem;
-    box-shadow: 0 4px 15px ;
+    box-shadow: 0 4px 15px var(--sombra);
 }
 
 header img {
@@ -104,7 +104,7 @@ nav a:hover {
 }
 
 
-/* Cards */
+/* ===== CARDS ===== */
 .card {
     background: white;
     border-radius: 20px;
@@ -128,7 +128,7 @@ nav a:hover {
 }
 
 
-/* Links sociais */
+/* ===== LINKS SOCIAIS ===== */
 .social-grid {
     display: flex;
     flex-wrap: wrap;
@@ -154,6 +154,7 @@ nav a:hover {
     background-color: var(--purpura-claro);
     color: white;
     transform: translateY(-2px);
+    text-decoration: none;
 }
 
 
@@ -163,12 +164,6 @@ nav a:hover {
     grid-template-columns: repeat(2, minmax(280px, 1fr));
     gap: 25px;
     margin-top: 20px;
-}
-
-.grid-membros:last-of-type .card-membro:hover {
-    background: linear-gradient(135deg, #ffffff 0%, #fce4ec 100%);
-    border-color: #ff4081;
-    box-shadow: 0 15px 35px rgba(192, 28, 104, 0.2);
 }
 
 /* Card */
@@ -189,6 +184,18 @@ nav a:hover {
     border-color: #ab47bc;
 }
 
+/* Monitores */
+.grid-membros:last-of-type .card-membro {
+    background: linear-gradient(135deg, #ffffff 0%, #fce4ec 100%);
+    border-color: #f48fb1;
+}
+
+.grid-membros:last-of-type .card-membro:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #fce4ec 100%);
+    border-color: #ff4081;
+    box-shadow: 0 15px 35px rgba(192, 28, 104, 0.2);
+}
+
 /* Foto */
 .card-membro img {
     width: 150px;
@@ -207,21 +214,28 @@ nav a:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* Foto dos monitores */
+.grid-membros:last-of-type .card-membro img {
+    border-color: #f06292;
+}
+
+.grid-membros:last-of-type .card-membro:hover img {
+    border-color: #ff4081;
+}
+
 /* Nome */
-.card-membro h4{
+.card-membro h4 {
     font-size: 1.2rem;
     font-weight: bold;
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
     margin: 10px 0;
-}
-
-.card-membro h4 {
     color: #4a148c;
 }
 
-.grid-membros:last-of-type h4 {
+/* Nome dos monitores */
+.grid-membros:last-of-type .card-membro h4 {
     color: #c2185b;
 }
 
@@ -239,7 +253,7 @@ nav a:hover {
 }
 
 
-/* ===== Rodapé ====== */
+/* ===== RODAPÉ ===== */
 footer {
     background-color: #1e2a3e;
     color: #cfd8dc;
@@ -247,4 +261,117 @@ footer {
     padding: 1.5rem;
     margin-top: 2rem;
     font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablets e celulares grandes (até 768px) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    header h2 {
+        font-size: 1rem;
+    }
+    
+    nav a {
+        margin: 0.3rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .card h3 {
+        font-size: 1.4rem;
+    }
+    
+    .grid-membros {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .card-membro img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .card-membro h4 {
+        font-size: 1.1rem;
+    }
+    
+    .card-membro p {
+        font-size: 0.85rem;
+    }
+    
+    .social-link {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .titulo-membros {
+        font-size: 1.2rem;
+        text-align: center;
+        border-left: none;
+        border-bottom: 3px solid;
+        padding-bottom: 8px;
+        display: inline-block;
+        width: auto;
+    }
+}
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+    header img {
+        max-width: 130px;
+    }
+    
+    .card {
+        padding: 1rem;
+    }
+    
+    .card h3 {
+        font-size: 1.2rem;
+        border-left: 3px solid var(--purpura);
+    }
+    
+    .grid-membros {
+        gap: 15px;
+        padding: 0;
+    }
+    
+    .card-membro {
+        padding: 15px;
+    }
+    
+    .card-membro img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .card-membro h4 {
+        font-size: 1rem;
+    }
+    
+    .card-membro p {
+        font-size: 0.8rem;
+    }
+    
+    .social-grid {
+        gap: 0.8rem;
+    }
+    
+    .social-link {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    footer {
+        font-size: 0.75rem;
+        padding: 1rem;
+    }
 }
