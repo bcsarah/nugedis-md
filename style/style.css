@@ -5,7 +5,8 @@
     --purpura-intermediario: #ff4980;
     --purpura-claro: #ff789a;
 
-    --violeta: #5b1297;
+    --violeta: #752f96;
+    --violeta-escuro: #752f9690;
 
     --preto: #1e2a3e;
     --sombra: #00000033;
@@ -34,8 +35,12 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: var(--purpura-escuro);
+}
+
+ul li {
+    list-style-type: none;
 }
 
 
@@ -123,7 +128,8 @@ nav a:hover {
     color: var(--violeta);
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    border-left: 5px solid var(--purpura);
+    border-left: 5px solid var(--violeta-escuro);
+    border-radius: 5px;
     padding-left: 1rem;
 }
 
@@ -132,6 +138,7 @@ nav a:hover {
 .social-grid {
     display: flex;
     flex-wrap: wrap;
+
     justify-content: center;
     gap: 1.2rem;
     margin: 1.5rem 0;
@@ -263,6 +270,39 @@ footer {
     font-size: 0.9rem;
 }
 
+
+/* ===== BOTÃO VOLTAR AO TOPO ===== */
+#btnTopo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, var(--purpura), var(--purpura-intermediario));
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+#btnTopo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(212, 44, 100, 0.4);
+    background: linear-gradient(135deg, var(--purpura-intermediario), var(--purpura-claro));
+}
+
+#btnTopo:active {
+    transform: scale(0.9);
+}
+
+
 /* ===== RESPONSIVIDADE ===== */
 
 /* Tablets e celulares grandes (até 768px) */
@@ -336,7 +376,6 @@ footer {
     
     .card h3 {
         font-size: 1.2rem;
-        border-left: 3px solid var(--purpura);
     }
     
     .grid-membros {

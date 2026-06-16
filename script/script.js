@@ -16,4 +16,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    // ===== BOTÃO VOLTAR AO TOPO =====
+    const btnTopo = document.getElementById('btnTopo');
+
+    // Mostrar/esconder botão conforme rolagem
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            btnTopo.style.display = 'flex';
+        } else {
+            btnTopo.style.display = 'none';
+        }
+    });
+
+    // Ação de clique para voltar ao topo com animação suave
+    if (btnTopo) {
+        btnTopo.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
