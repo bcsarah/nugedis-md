@@ -1,7 +1,8 @@
 # Site NUGEDIS - IFAL MD
 
 ## To-Do
-- Adicionar loading no site
-- Deixar "zoom padrão"
+- [x] Loading no site
+- [x] Botão de "voltar ao topo"
+- [x] Zoom padrão
 
-* Adicionar região de sugestões, livros etc
+* [ ] Indicações culturais envolvendo a temática de gênero e diversidade sexual

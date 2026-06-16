@@ -302,54 +302,189 @@ footer {
     transform: scale(0.9);
 }
 
+/* ===== ZOOM PADRÃO E AJUSTES GERAIS ===== */
+
+/* Zoom padrão para telas grandes */
+html {
+    font-size: 112.5%; /* 18px - zoom padrão de 112.5% */
+}
+
+body {
+    font-size: 1.125rem; /* 18px */
+}
+
+/* Ajustes de fonte para melhor legibilidade */
+header h1 {
+    font-size: 3rem;
+}
+
+header h2 {
+    font-size: 1.4rem;
+}
+
+nav a {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+}
+
+.card h3 {
+    font-size: 2rem;
+}
+
+.card-membro h4 {
+    font-size: 1.4rem;
+}
+
+.card-membro p {
+    font-size: 1rem;
+}
+
+.social-link {
+    font-size: 1.05rem;
+    padding: 0.9rem 1.8rem;
+}
+
+footer {
+    font-size: 1rem;
+}
+
+
+/* ===== TELA DE LOADING ===== */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--purpura), var(--purpura-intermediario));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+/* Esconde o loading quando terminar */
+#loading.esconder {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Spinner do loading */
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: girar 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+#loading p {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    animation: pulsar 1.5s ease-in-out infinite;
+}
+
+/* Animações */
+@keyframes girar {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulsar {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
 
 /* ===== RESPONSIVIDADE ===== */
 
+/* Tablets e celulares grandes (até 1024px) */
+@media (max-width: 1024px) {
+    .grid-membros {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
 /* Tablets e celulares grandes (até 768px) */
 @media (max-width: 768px) {
+    /* Reset do zoom em telas menores */
+    html {
+        font-size: 100%; /* Volta para 16px */
+    }
+    
+    body {
+        font-size: 1rem; /* 16px */
+    }
+    
     header h1 {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
     }
     
     header h2 {
-        font-size: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    header img {
+        max-width: 140px;
     }
     
     nav a {
+        font-size: 0.95rem;
         margin: 0.3rem;
         padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
     }
     
     .container {
         padding: 1.5rem 1rem;
     }
     
+    .card {
+        padding: 1.5rem;
+    }
+    
     .card h3 {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
+        border-left: 4px solid var(--violeta-escuro);
     }
     
     .grid-membros {
-        grid-template-columns: 1fr;
         gap: 20px;
         padding: 0 15px;
+        max-width: 400px;
+        margin: 20px auto;
+    }
+    
+    .card-membro {
+        padding: 18px;
     }
     
     .card-membro img {
-        width: 120px;
-        height: 120px;
+        width: 130px;
+        height: 130px;
     }
     
     .card-membro h4 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
     
     .card-membro p {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
     
     .social-link {
-        padding: 0.6rem 1rem;
+        padding: 0.6rem 1.2rem;
         font-size: 0.9rem;
     }
     
@@ -362,42 +497,98 @@ footer {
         display: inline-block;
         width: auto;
     }
+    
+    .titulo-membros:first-of-type {
+        border-bottom-color: var(--purpura-claro);
+    }
+    
+    .titulo-membros:last-of-type {
+        border-bottom-color: #f06292;
+    }
+    
+    #btnTopo {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    footer {
+        font-size: 0.85rem;
+        padding: 1.2rem;
+    }
 }
 
 /* Celulares pequenos (até 480px) */
 @media (max-width: 480px) {
+    /* Mantém o zoom base */
+    html {
+        font-size: 100%;
+    }
+    
     header img {
-        max-width: 130px;
+        max-width: 110px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    header h2 {
+        font-size: 0.95rem;
+    }
+    
+    header {
+        padding: 1.5rem 0.8rem;
+    }
+    
+    nav a {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
+        margin: 0.2rem;
+    }
+    
+    .container {
+        padding: 1rem 0.8rem;
     }
     
     .card {
         padding: 1rem;
+        border-radius: 15px;
     }
     
     .card h3 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+        border-left: 3px solid var(--violeta-escuro);
+        padding-left: 0.8rem;
     }
     
     .grid-membros {
         gap: 15px;
         padding: 0;
+        max-width: 280px;
     }
     
     .card-membro {
-        padding: 15px;
+        padding: 12px;
+        border-radius: 15px;
     }
     
     .card-membro img {
         width: 100px;
         height: 100px;
+        margin-bottom: 10px;
     }
     
     .card-membro h4 {
         font-size: 1rem;
+        margin: 8px 0;
     }
     
     .card-membro p {
         font-size: 0.8rem;
+        margin-top: 4px;
     }
     
     .social-grid {
@@ -407,10 +598,35 @@ footer {
     .social-link {
         padding: 0.5rem 0.8rem;
         font-size: 0.8rem;
+        border-radius: 30px;
+    }
+    
+    .titulo-membros {
+        font-size: 1rem;
+        padding-bottom: 6px;
+    }
+    
+    #btnTopo {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        bottom: 15px;
+        right: 15px;
     }
     
     footer {
-        font-size: 0.75rem;
-        padding: 1rem;
+        font-size: 0.7rem;
+        padding: 0.8rem;
+    }
+}
+
+/* Telas muito grandes (otimização) */
+@media (min-width: 1400px) {
+    html {
+        font-size: 125%; /* 20px em telas grandes */
+    }
+    
+    .container {
+        max-width: 1400px;
     }
 }

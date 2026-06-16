@@ -1,7 +1,7 @@
 // Espera o DOM
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Botões de Navegação ao Topo (Sobre, Atividades etc)
+    // ===== Botões de Navegação ao Topo (Sobre, Atividades etc) =====
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -11,11 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (targetElement) {
                 targetElement.scrollIntoView({ 
                     behavior: 'smooth', 
-                    block: 'start' 
+                    block: 'center' 
                 });
             }
         });
     });
+
     // ===== BOTÃO VOLTAR AO TOPO =====
     const btnTopo = document.getElementById('btnTopo');
 
@@ -37,4 +38,15 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+    
+    // ===== TELA DE LOADING =====
+    window.addEventListener('load', function() {
+        const loading = document.getElementById('loading');
+        if (loading) {
+            // Adiciona um pequeno delay para mostrar o loading (opcional)
+            setTimeout(function() {
+                loading.classList.add('esconder');
+            }, 800);
+        }
+    });
 });
