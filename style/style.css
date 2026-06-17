@@ -406,26 +406,37 @@ footer {
     }
 }
 
+/* ===== RESPONSIVIDADE MELHORADA ===== */
 
-/* ===== RESPONSIVIDADE ===== */
+/* Telas muito grandes */
+@media (min-width: 1400px) {
+    html {
+        font-size: 118%;
+    }
+    
+    .container {
+        max-width: 1400px;
+        padding: 2rem 2.5rem;
+    }
+}
 
-/* Tablets e celulares grandes (até 1024px) */
-@media (max-width: 1024px) {
+/* Telas médias (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
     .grid-membros {
-        grid-template-columns: repeat(2, minmax(250px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+        padding: 0 15px;
     }
 }
 
 /* Tablets e celulares grandes (até 768px) */
 @media (max-width: 768px) {
-    /* Reset do zoom em telas menores */
     html {
-        font-size: 100%; /* Volta para 16px */
+        font-size: 100%;
     }
     
     body {
-        font-size: 1rem; /* 16px */
+        font-size: 1rem;
     }
     
     header h1 {
@@ -460,6 +471,7 @@ footer {
     }
     
     .grid-membros {
+        grid-template-columns: 1fr;
         gap: 20px;
         padding: 0 15px;
         max-width: 400px;
@@ -517,14 +529,18 @@ footer {
     footer {
         font-size: 0.85rem;
         padding: 1.2rem;
+        line-height: 1.8;
     }
 }
 
 /* Celulares pequenos (até 480px) */
 @media (max-width: 480px) {
-    /* Mantém o zoom base */
     html {
         font-size: 100%;
+    }
+    
+    header {
+        padding: 1.2rem 0.8rem;
     }
     
     header img {
@@ -532,21 +548,28 @@ footer {
     }
     
     header h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        letter-spacing: 1px;
     }
     
     header h2 {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
+        margin: 0.2rem 0;
     }
     
-    header {
-        padding: 1.5rem 0.8rem;
+    nav {
+        padding: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     nav a {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         padding: 0.3rem 0.6rem;
-        margin: 0.2rem;
+        margin: 0.15rem;
+        flex: 0 1 auto;
+        min-width: 60px;
     }
     
     .container {
@@ -565,9 +588,11 @@ footer {
     }
     
     .grid-membros {
+        grid-template-columns: 1fr;
         gap: 15px;
-        padding: 0;
-        max-width: 280px;
+        padding: 0 10px;
+        max-width: 100%;
+        margin: 15px auto;
     }
     
     .card-membro {
@@ -592,12 +617,18 @@ footer {
     }
     
     .social-grid {
+        flex-direction: column;
+        align-items: center;
         gap: 0.8rem;
+        margin: 1rem 0;
     }
     
     .social-link {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.8rem;
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
         border-radius: 30px;
     }
     
@@ -612,21 +643,31 @@ footer {
         font-size: 18px;
         bottom: 15px;
         right: 15px;
+        opacity: 0.9;
+    }
+    
+    #btnTopo:hover {
+        opacity: 1;
     }
     
     footer {
         font-size: 0.7rem;
         padding: 0.8rem;
-    }
-}
-
-/* Telas muito grandes (otimização) */
-@media (min-width: 1400px) {
-    html {
-        font-size: 125%; /* 20px em telas grandes */
+        line-height: 2;
     }
     
-    .container {
-        max-width: 1400px;
+    footer p {
+        margin-bottom: 0.3rem;
+    }
+    
+    .loader {
+        width: 40px;
+        height: 40px;
+        border-width: 4px;
+    }
+    
+    #loading p {
+        font-size: 1rem;
+        letter-spacing: 1px;
     }
 }
