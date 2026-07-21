@@ -4,11 +4,14 @@
 - [x] Loading no site
 - [x] Botão de "voltar ao topo"
 - [x] Zoom padrão
-- [ ] Botão de Acessibilidade
+- [x] Scrollbar personalizada
+* [x] Adicionar Modo Escuro
 
-* [ ] Adicionar possibilidade de Enquete
 * [ ] Adicionar FAQ à seção "Sobre"
 * [ ] Calendário de Eventos Passados
 * [ ] Mídia/Galeria
 * [ ] Blog/Notícias
+
+### A decidir
+* [ ] Adicionar Seção "enquetes"
 * [ ] Seção "Recursos e Materiais" (PDFs etc)

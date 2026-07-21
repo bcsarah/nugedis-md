@@ -1,0 +1,63 @@
+/* ===== RESPONSIVIDADE ===== */
+
+/* Telas muito grandes */
+@media (min-width: 1400px) {
+    html {
+        font-size: 118%;
+    }
+    
+    .container {
+        max-width: var(--tamanho-maximo-grande);
+        padding: var(--espacamento-grande) var(--espacamento-gigante);
+    }
+    
+    /* Mantém 2 colunas para coordenadores e 4 para monitores */
+    .grid-coordenadores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid-monitores {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Telas médias (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .grid-coordenadores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid-monitores {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 15px;
+    }
+}
+
+/* Tablets e celulares grandes (até 768px) */
+@media (max-width: 768px) {
+    /* ... (mantenha o código existente) ... */
+    
+    .grid-coordenadores,
+    .grid-monitores {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+        max-width: 400px;
+        margin: var(--espacamento-padrao) auto;
+    }
+}
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+    /* ... (mantenha o código existente) ... */
+    
+    .grid-coordenadores,
+    .grid-monitores {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 10px;
+        max-width: 100%;
+        margin: 15px auto;
+    }
+}

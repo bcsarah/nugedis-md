@@ -1,0 +1,210 @@
+/* ===== CARDS ===== */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--raio-borda);
+    padding: 1.8rem;
+    margin-bottom: var(--espacamento-grande);
+    box-shadow: 0 10px 25px var(--card-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: var(--card-hover-transform);
+    box-shadow: 0 15px 35px var(--card-shadow);
+}
+
+.card h3 {
+    color: var(--violeta);
+    font-size: 2rem;
+    margin-bottom: var(--espacamento-padrao);
+    border-left: 5px solid var(--violeta-escuro);
+    border-radius: 5px;
+    padding-left: var(--espacamento-padrao);
+}
+
+/* ===== LINKS SOCIAIS ===== */
+.social-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: var(--espacamento-padrao) 0;
+}
+
+.social-link {
+    color: var(--link-color);
+    background: var(--link-bg);
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--raio-borda-grande);
+    text-decoration: none;
+    font-weight: var(--font-peso-negrito);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transicao-media);
+    font-size: 1.05rem;
+}
+
+.social-link:hover {
+    background-color: var(--link-bg-hover);
+    color: var(--branco);
+    transform: translateY(-2px);
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(212, 44, 100, 0.2);
+}
+
+/* ===== EQUIPE ===== */
+.grid-membros {
+    display: grid;
+    gap: 25px;
+    margin-top: var(--espacamento-padrao);
+}
+
+/* Coordenadores - Grid de 2 colunas */
+.grid-coordenadores {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Monitores - Grid de 4 colunas */
+.grid-monitores {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card-membro {
+    background: var(--membro-bg);
+    border-radius: var(--raio-borda);
+    padding: var(--espacamento-padrao);
+    text-align: center;
+    transition: var(--transicao-media);
+    cursor: pointer;
+    border: 1px solid var(--membro-border);
+}
+
+.card-membro:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(106, 27, 154, 0.2);
+    background: var(--membro-bg-hover);
+    border-color: var(--membro-border-hover);
+}
+
+/* Cards dos Monitores */
+.grid-monitores .card-membro {
+    background: var(--monitor-bg);
+    border-color: var(--monitor-border);
+}
+
+.grid-monitores .card-membro:hover {
+    background: var(--monitor-bg-hover);
+    border-color: var(--monitor-border-hover);
+    box-shadow: 0 15px 35px rgba(192, 28, 104, 0.2);
+}
+
+/* Foto dos Membros */
+.card-membro img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: var(--raio-borda-circular);
+    margin: 0 auto 15px;
+    border: 3px solid #ab47bc;
+    transition: var(--transicao-media);
+    display: block;
+}
+
+.card-membro:hover img {
+    transform: scale(1.08) rotate(2deg);
+    border-color: #ff4081;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Foto dos Monitores */
+.grid-monitores .card-membro img {
+    border-color: #f06292;
+}
+
+.grid-monitores .card-membro:hover img {
+    border-color: #ff4081;
+}
+
+/* Nome dos Membros */
+.card-membro h4 {
+    font-size: 1.4rem;
+    font-weight: var(--font-peso-negrito);
+    transition: var(--transicao-media);
+    position: relative;
+    display: inline-block;
+    margin: 10px 0;
+    color: #4a148c;
+}
+
+/* Nome dos Monitores */
+.grid-monitores .card-membro h4 {
+    color: #c2185b;
+}
+
+.card-membro:hover h4 {
+    color: #ff4081;
+    transform: translateY(-3px);
+}
+
+/* Descrição */
+.card-membro p {
+    color: var(--texto-escuro);
+    line-height: 1.5;
+    font-size: 0.9rem;
+    margin-top: 6px;
+}
+
+/* ===== BOTÃO VOLTAR AO TOPO ===== */
+#btnTopo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, var(--purpura), var(--purpura-intermediario));
+    color: var(--branco);
+    border: none;
+    border-radius: var(--raio-borda-circular);
+    width: 55px;
+    height: 55px;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px var(--sombra-forte);
+    transition: var(--transicao-media);
+    z-index: 1000;
+}
+
+#btnTopo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(212, 44, 100, 0.4);
+    background: linear-gradient(135deg, var(--purpura-intermediario), var(--purpura-claro));
+}
+
+#btnTopo:active {
+    transform: scale(0.9);
+}
+
+/* ===== BOTÃO MODO ESCURO ===== */
+.btn-dark-mode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: var(--raio-borda-circular);
+    background: linear-gradient(135deg, var(--purpura), var(--purpura-intermediario));
+    color: var(--branco);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px var(--sombra-forte);
+    transition: var(--transicao-media);
+    z-index: 1000;
+}
+
+.btn-dark-mode:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 8px 25px rgba(212, 44, 100, 0.4);
+}
