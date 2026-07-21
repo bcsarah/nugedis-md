@@ -4,5 +4,11 @@
 - [x] Loading no site
 - [x] Botão de "voltar ao topo"
 - [x] Zoom padrão
+- [ ] Botão de Acessibilidade
 
-* [ ] Indicações culturais envolvendo a temática de gênero e diversidade sexual
+* [ ] Adicionar possibilidade de Enquete
+* [ ] Adicionar FAQ à seção "Sobre"
+* [ ] Calendário de Eventos Passados
+* [ ] Mídia/Galeria
+* [ ] Blog/Notícias
+* [ ] Seção "Recursos e Materiais" (PDFs etc)
