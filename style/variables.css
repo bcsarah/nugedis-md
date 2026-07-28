@@ -14,7 +14,7 @@ Caso queira alterar cores, altere por aqui, sem mexer no código principal.
     --violeta: #752f96;
     --violeta-escuro: #752f9690;
     --preto: #1e2a3e;
-    
+
     /* Cores de Apoio */
     --branco: #ffffff;
     --cinza-claro: #f5f7fa;
@@ -22,47 +22,47 @@ Caso queira alterar cores, altere por aqui, sem mexer no código principal.
     --cinza-escuro: #cfd8dc;
     --texto-claro: #e0e0e0;
     --texto-escuro: #555555;
-    
+
     /* Sombras */
     --sombra: #00000033;
     --sombra-card: #00000015;
     --sombra-forte: #00000040;
-    
+
     /* Tipografia */
     --font-principal: 'Verdana', 'Segoe UI', 'Arial', sans-serif;
     --font-titulo: 'Arial Black', 'Verdana', sans-serif;
     --font-peso-normal: 400;
     --font-peso-negrito: 600;
     --font-peso-extra: 700;
-    
+
     /* Espaçamento */
     --espacamento-padrao: 1.5rem;
     --espacamento-pequeno: 0.8rem;
     --espacamento-grande: 2.5rem;
     --espacamento-gigante: 3.5rem;
-    
+
     /* Bordas */
     --raio-borda: 20px;
     --raio-borda-pequeno: 8px;
     --raio-borda-grande: 30px;
     --raio-borda-circular: 50%;
-    
+
     /* Tamanhos */
     --tamanho-maximo: 1200px;
     --tamanho-maximo-grande: 1400px;
-    
+
     /* Cores dos Cards */
     --card-bg: var(--branco);
     --card-shadow: var(--sombra-card);
-    
+
     /* Cores dos Membros */
     --membro-bg: #faf5ff;
     --membro-border: #e1bee7;
-    
+
     /* Cores dos Monitores */
     --monitor-bg: #fce4ec;
     --monitor-border: #f48fb1;
-    
+
     /* Cores dos Links */
     --link-color: var(--purpura-claro);
     --link-hover: var(--purpura-escuro);
