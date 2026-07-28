@@ -11,6 +11,7 @@
 * [ ] Calendário de Eventos Passados
 * [ ] Mídia/Galeria
 * [ ] Blog/Notícias
+* [ ] Quiz com temática LGBT
 
 ### A decidir
 * [ ] Adicionar Seção "enquetes"

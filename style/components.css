@@ -1,3 +1,13 @@
+/*
+Componentes do Site
+
+Esse arquivo mexe com parte das partes criadas,
+como links sociais, entre outros.
+Alterar esse arquivo implica alterar os cards,
+links sociais, botões de voltar ao topo e
+modo escuro e a parte dos membros.
+*/
+
 /* ===== CARDS ===== */
 .card {
     background: var(--card-bg);

@@ -1,4 +1,9 @@
-/* ===== RESPONSIVIDADE ===== */
+/*
+Responsividade
+
+Esse arquivo altera a forma do site para cada tamanho de tela.
+Abaixo são listados quais os tamanhos da tela.
+*/
 
 /* Telas muito grandes */
 @media (min-width: 1400px) {
@@ -11,7 +16,7 @@
         padding: var(--espacamento-grande) var(--espacamento-gigante);
     }
     
-    /* Mantém 2 colunas para coordenadores e 4 para monitores */
+    /* 2 colunas para coordenadores e 4 para monitores */
     .grid-coordenadores {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -21,7 +26,7 @@
     }
 }
 
-/* Telas médias (769px - 1024px) */
+/* Telas médias */
 @media (min-width: 769px) and (max-width: 1024px) {
     .grid-coordenadores {
         grid-template-columns: repeat(2, 1fr);
@@ -34,10 +39,8 @@
     }
 }
 
-/* Tablets e celulares grandes (até 768px) */
+/* Tablets e celulares grandes */
 @media (max-width: 768px) {
-    /* ... (mantenha o código existente) ... */
-    
     .grid-coordenadores,
     .grid-monitores {
         grid-template-columns: 1fr;
@@ -48,10 +51,8 @@
     }
 }
 
-/* Celulares pequenos (até 480px) */
+/* Celulares pequenos */
 @media (max-width: 480px) {
-    /* ... (mantenha o código existente) ... */
-    
     .grid-coordenadores,
     .grid-monitores {
         grid-template-columns: 1fr;

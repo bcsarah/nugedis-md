@@ -1,8 +1,8 @@
 /*
-NUGEDIS MD - CSS Principal
+style.css
 
-Este arquivo serve para importar todos os outros arquivos css dentro da pasta style.
-Para alterações futuras, atente-se em localizar os arquivos css dentro de Style.
+Este arquivo serve para importar todos os outros arquivos CSS dentro da pasta Style.
+Para alterações futuras, atente-se em localizar os arquivos CSS dentro de Style.
 */
 
 @import url('variables.css');

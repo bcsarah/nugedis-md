@@ -1,4 +1,10 @@
-/* ===== VARIÁVEIS CSS COMPLETAS ===== */
+/*
+Variáveis
+
+Nesse arquivo estão as variáveis do projeto.
+Isso promove melhor reuso do código e melhor modularização.
+Caso queira alterar cores, altere por aqui, sem mexer no código principal.
+*/
 :root {
     /* Cores Principais */
     --purpura: #d42c64;

@@ -1,4 +1,11 @@
-/* ===== RESET E CONFIGURAÇÕES GERAIS ===== */
+/* 
+Base
+
+Esse arquivo é parte da estrutura base do site.
+Algumas funções padrões para cada área são listadas aqui.
+*/
+
+/* ===== CONFIGURAÇÕES GERAIS ===== */
 * {
     margin: 0;
     padding: 0;
@@ -35,33 +42,7 @@ ul li {
     list-style-type: none;
 }
 
-/* ===== SCROLLBAR PERSONALIZADA ===== */
-::-webkit-scrollbar {
-    width: var(--scrollbar-width);
-    height: var(--scrollbar-height);
-}
-
-::-webkit-scrollbar-track {
-    background: var(--scrollbar-track);
-    border-radius: var(--scrollbar-radius);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-thumb);
-    border-radius: var(--scrollbar-radius);
-    transition: var(--transicao-media);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--scrollbar-thumb-hover);
-}
-
-* {
-    scrollbar-width: thin;
-    scrollbar-color: var(--purpura) var(--scrollbar-track);
-}
-
-/* ===== TELA DE LOADING ===== */
+/* ===== LOADING ===== */
 #loading {
     position: fixed;
     top: 0;
@@ -100,7 +81,7 @@ ul li {
     animation: pulsar 1.5s ease-in-out infinite;
 }
 
-/* ===== ANIMAÇÕES ===== */
+/* Animações do Loading */
 @keyframes girar {
     to {
         transform: rotate(360deg);
