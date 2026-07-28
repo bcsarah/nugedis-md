@@ -47,11 +47,6 @@ Caso queira alterar cores, altere por aqui, sem mexer no código principal.
     --raio-borda-grande: 30px;
     --raio-borda-circular: 50%;
     
-    /* Transições */
-    --transicao-rapida: 0.2s ease;
-    --transicao-media: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transicao-lenta: 0.6s ease;
-    
     /* Tamanhos */
     --tamanho-maximo: 1200px;
     --tamanho-maximo-grande: 1400px;
@@ -59,31 +54,18 @@ Caso queira alterar cores, altere por aqui, sem mexer no código principal.
     /* Cores dos Cards */
     --card-bg: var(--branco);
     --card-shadow: var(--sombra-card);
-    --card-hover-transform: translateY(-5px);
     
     /* Cores dos Membros */
-    --membro-bg: linear-gradient(135deg, #ffffff 0%, #faf5ff 100%);
-    --membro-bg-hover: linear-gradient(135deg, #ffffff 0%, #f3e5f5 100%);
+    --membro-bg: #faf5ff;
     --membro-border: #e1bee7;
-    --membro-border-hover: #ab47bc;
     
     /* Cores dos Monitores */
-    --monitor-bg: linear-gradient(135deg, #ffffff 0%, #fce4ec 100%);
-    --monitor-bg-hover: linear-gradient(135deg, #ffffff 0%, #fce4ec 100%);
+    --monitor-bg: #fce4ec;
     --monitor-border: #f48fb1;
-    --monitor-border-hover: #ff4081;
     
     /* Cores dos Links */
     --link-color: var(--purpura-claro);
     --link-hover: var(--purpura-escuro);
     --link-bg: #f3e5f5;
     --link-bg-hover: var(--purpura-claro);
-    
-    /* Scrollbar */
-    --scrollbar-width: 10px;
-    --scrollbar-height: 10px;
-    --scrollbar-track: #f1f1f1;
-    --scrollbar-thumb: linear-gradient(180deg, var(--purpura), var(--violeta));
-    --scrollbar-thumb-hover: var(--purpura-escuro);
-    --scrollbar-radius: 10px;
 }

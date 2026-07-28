@@ -66,11 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ===== MELHORIAS DE PERFORMANCE =====
 
-    // Tratamento de erros global
-    window.addEventListener('error', function(e) {
-        console.error('Erro capturado:', e.message);
-    });
-
     // Scroll suave para links âncora
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {

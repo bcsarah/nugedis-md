@@ -8,143 +8,80 @@ Alterar esse arquivo implica alterar apenas as funcionalidades do modo escuro do
 */
 
 body.dark-mode {
-    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+    background: #0f0f1a;
     color: #e8e8e8;
 
     /* ===== HEADER ===== */
     header {
-        background: linear-gradient(100deg, #2a1a3a, #391d46, #4c375f);
+        background: #391d46;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     }
 
     /* ===== NAVEGADOR ===== */
+    
     nav {
         background-color: #2a1a3a;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-    }
 
-    nav a:hover {
-        background-color: #4a2a5a;
-        color: #ff789a;
+        a:hover {
+            background-color: #4a2a5a;
+            color: #ff789a;
+        }
     }
 
     /* ===== CARDS ===== */
     .card {
-        background: linear-gradient(145deg, #1e1e32, #252540);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .card:hover {
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-        border-color: rgba(255, 120, 154, 0.2);
+        background: #1e1e32;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
     }
 
     .card h3 {
         color: #ff789a;
         border-left-color: #ff789a;
-        text-shadow: 0 0 20px rgba(255, 120, 154, 0.2);
     }
 
     /* Card Membros */
     .card-membro {
-        background: linear-gradient(145deg, #1e1e32, #2a1a3a);
-        border-color: #3a2a4a;
+        background: #2a1a3a;
+
+        h4 {
+            color: #ab47bc;
+           
+        }
+
+        p {
+            color: #b8b8d0;
+        }
+
     }
 
-    .card-membro:hover {
-        background: linear-gradient(145deg, #2a1a3a, #3d1f4a);
-        border-color: #ff789a;
-        box-shadow: 0 15px 35px rgba(255, 120, 154, 0.15);
-    }
-
-    .card-membro h4 {
+    /* Nome dos Monitores */
+    .grid-monitores .card-membro h4 {
         color: #ff789a;
-    }
-
-    .card-membro:hover h4 {
-        color: #ffa1c1;
-        text-shadow: 0 0 20px rgba(255, 120, 154, 0.3);
-    }
-
-    .card-membro p {
-        color: #b8b8d0;
-    }
-
-    /* Card Monitores */
-    .grid-membros:last-of-type .card-membro {
-        background: linear-gradient(145deg, #1a1a2e, #2a1a2e);
-        border-color: #4a2a3a;
-    }
-
-    .grid-membros:last-of-type .card-membro:hover {
-        background: linear-gradient(145deg, #2a1a2e, #3d1a3a);
-        border-color: #ff789a;
-    }
-
-    .grid-membros:last-of-type .card-membro h4 {
-        color: #ff789a;
-    }
-
-    .grid-membros:last-of-type .card-membro:hover h4 {
-        color: #ffa1c1;
-    }
-
-    /* Fotos dos membros */
-    .card-membro img {
-        border-color: #4a2a5a;
-    }
-
-    .card-membro:hover img {
-        border-color: #ff789a;
-        box-shadow: 0 10px 30px rgba(255, 120, 154, 0.2);
-    }
-
-    .grid-membros:last-of-type .card-membro img {
-        border-color: #5a2a4a;
-    }
-
-    .grid-membros:last-of-type .card-membro:hover img {
-        border-color: #ff789a;
     }
 
     /* ===== LINKS ===== */
     .social-link {
         background: #2a1a3a;
         color: #ff789a;
-        border: 1px solid rgba(255, 120, 154, 0.1);
     }
 
     .social-link:hover {
-        background: linear-gradient(135deg, #ff789a, #ff4980);
-        color: #ffffff;
-        border-color: transparent;
-        box-shadow: 0 5px 25px rgba(255, 120, 154, 0.3);
+        background: #ff4980;
+        color: #1e1e32;
     }
 
     /* ===== FOOTER ===== */
     footer {
-        background-color: #0a0a15;
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        background-color: #000000;
         color: #8888aa;
-    }
 
-    footer a {
-        color: #ff789a;
-    }
+        a {
+            color: #ff789a;
+        }
 
-    footer a:hover {
-        color: #ffa1c1;
-    }
-
-    /* Botão voltar ao topo */
-    #btnTopo {
-        background: linear-gradient(135deg, #ff4980, #ff789a);
-        box-shadow: 0 4px 20px rgba(255, 72, 128, 0.3);
-    }
-
-    #btnTopo:hover {
-        background: linear-gradient(135deg, #ff789a, #ffa1c1);
-        box-shadow: 0 8px 30px rgba(255, 72, 128, 0.4);
+        a:hover {
+            color: #ffc2d6;
+        }
     }
 }
