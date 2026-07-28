@@ -1,4 +1,6 @@
-// ===== DOM CONTENT LOADED =====
+// ========================================
+// DOM CONTENT LOADED
+// ========================================
 document.addEventListener('DOMContentLoaded', function() {
 
     // ===== BOTÕES DE NAVEGAÇÃO =====
@@ -106,5 +108,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    console.log('Site carregado!');
-});
+    // ===== BANNER DE BOAS-VINDAS =====
+    const welcomeBanner = document.getElementById('welcomeBanner');
+    
+    function fecharWelcome() {
+        if (welcomeBanner) {
+            welcomeBanner.style.animation = 'welcomeSlideUp 0.4s ease forwards';
+            setTimeout(() => {
+                welcomeBanner.style.display = 'none';
+            }, 400);
+        }
+    }
+
+    // Fecha automaticamente após 6 segundos
+    if (welcomeBanner) {
+        setTimeout(fecharWelcome, 6000);
+
+        // Fecha ao clicar fora do banner
+        document.addEventListener('click', function(e) {
+            if (welcomeBanner && !welcomeBanner.contains(e.target)) {
+                fecharWelcome();
+            }
+        });
+
+        // Fecha ao pressionar ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                fecharWelcome();
+            }
+        });
+    }
+
+    // ===== LOG DE SUCESSO =====
+    console.log('🚀 NUGEDIS Marechal - Site carregado com sucesso!');
+    console.log('🏳️‍🌈 Respeito, diversidade e inclusão para todes!');
+
+}); // FECHA O DOMContentLoaded
