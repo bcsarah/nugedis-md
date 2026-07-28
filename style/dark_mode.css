@@ -18,7 +18,7 @@ body.dark-mode {
     }
 
     /* ===== NAVEGADOR ===== */
-    
+
     nav {
         background-color: #2a1a3a;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
@@ -46,7 +46,7 @@ body.dark-mode {
 
         h4 {
             color: #ab47bc;
-           
+
         }
 
         p {

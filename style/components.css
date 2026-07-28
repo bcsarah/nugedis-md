@@ -303,3 +303,207 @@ modo escuro e a parte dos membros.
         transform: translateX(-50%) translateY(-30px);
     }
 }
+
+/* ========================================
+   ASIDE - BARRA LATERAL ESQUERDA
+   ======================================== */
+
+/* Layout Grid - Aside ESQUERDA */
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    /* 1/4 para aside, 3/4 para conteúdo */
+    gap: 2rem;
+    align-items: start;
+}
+
+/* ===== SIDEBAR (ESQUERDA) ===== */
+.sidebar {
+    position: sticky;
+    top: 20px;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    order: -1;
+    /* Garante que fique à esquerda */
+}
+
+.main-content {
+    min-width: 0;
+}
+
+/* Botão Toggle (visível apenas em mobile) */
+.sidebar-toggle {
+    display: none;
+    background: linear-gradient(135deg, var(--purpura), var(--purpura-intermediario));
+    color: var(--branco);
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--raio-borda-grande);
+    font-size: 1rem;
+    font-weight: var(--font-peso-negrito);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(212, 44, 100, 0.3);
+    transition: var(--transicao-media);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+
+.sidebar-toggle .toggle-icon {
+    font-size: 1.3rem;
+}
+
+.sidebar-toggle .toggle-text {
+    font-size: 0.95rem;
+}
+
+/* Cards do Aside */
+.aside-card {
+    background: var(--card-bg);
+    border-radius: var(--raio-borda-padrao);
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px var(--sombra-card);
+    border-left: 4px solid var(--purpura);
+    transition: var(--transicao-media);
+}
+
+
+.aside-card h4 {
+    color: var(--purpura);
+    font-size: 1.1rem;
+    font-weight: var(--font-peso-negrito);
+    margin-bottom: 1rem;
+    font-family: var(--font-titulo);
+}
+
+/* Card de Informações */
+.aside-info {
+    background: linear-gradient(135deg, #faf5ff, #f3e5f5);
+    border-left-color: var(--violeta);
+}
+
+/* Listas */
+.aside-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.aside-list li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--cinza-3);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--texto-secundario);
+}
+
+.aside-list li:last-child {
+    border-bottom: none;
+}
+
+.aside-list li span {
+    flex-shrink: 0;
+    font-size: 1.1rem;
+}
+
+.aside-list a {
+    color: var(--purpura);
+    text-decoration: none;
+    transition: var(--transicao-rapida);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.aside-list a:hover {
+    color: var(--purpura-escuro);
+}
+
+/* Eventos */
+.event-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+.event-date {
+    background: var(--purpura);
+    color: var(--branco);
+    padding: 0.15rem 0.6rem;
+    border-radius: var(--raio-borda-pequeno);
+    font-size: 0.7rem;
+    font-weight: var(--font-peso-negrito);
+    min-width: 40px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.event-name {
+    font-size: 0.85rem;
+    flex: 1;
+}
+
+.event-link {
+    color: var(--purpura);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transicao-rapida);
+    opacity: 0.6;
+    flex-shrink: 0;
+}
+
+.event-link:hover {
+    opacity: 1;
+}
+
+/* ===== MODO ESCURO ===== */
+body.dark-mode .aside-card {
+    background: var(--dark-bg-card);
+    border-left-color: var(--purpura-claro);
+}
+
+body.dark-mode .aside-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .aside-card h4 {
+    color: var(--purpura-claro);
+}
+
+body.dark-mode .aside-info {
+    background: linear-gradient(135deg, #2a1a3a, #3d1f4a);
+}
+
+body.dark-mode .aside-list li {
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+    color: var(--dark-texto-secundario);
+}
+
+body.dark-mode .aside-list a {
+    color: var(--purpura-claro);
+}
+
+body.dark-mode .aside-list a:hover {
+    color: #ffa1c1;
+}
+
+body.dark-mode .sidebar-toggle {
+    background: linear-gradient(135deg, #3d1f4a, #5a2a5a);
+}
+
+body.dark-mode .sidebar-toggle:hover {
+    box-shadow: 0 8px 25px rgba(255, 120, 154, 0.2);
+}
+
+body.dark-mode .event-date {
+    background: var(--purpura-intermediario);
+}

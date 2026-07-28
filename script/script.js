@@ -23,16 +23,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnTopo = document.getElementById('btnTopo');
 
     function toggleTopButton() {
-        if (window.scrollY > 300) {
-            btnTopo.style.display = 'flex';
-            btnTopo.style.opacity = '0';
-            btnTopo.style.transform = 'scale(0.8)';
-            setTimeout(() => {
-                btnTopo.style.opacity = '1';
-                btnTopo.style.transform = 'scale(1)';
-            }, 50);
-        } else {
-            btnTopo.style.display = 'none';
+        if (btnTopo) {
+            if (window.scrollY > 300) {
+                btnTopo.style.display = 'flex';
+                btnTopo.style.opacity = '0';
+                btnTopo.style.transform = 'scale(0.8)';
+                setTimeout(() => {
+                    btnTopo.style.opacity = '1';
+                    btnTopo.style.transform = 'scale(1)';
+                }, 50);
+            } else {
+                btnTopo.style.display = 'none';
+            }
         }
     }
 
@@ -66,9 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ===== MELHORIAS DE PERFORMANCE =====
-
-    // Scroll suave para links âncora
+    // ===== SCROLL SUAVE PARA LINKS ÂNCORA =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
@@ -120,18 +120,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Fecha automaticamente após 6 segundos
     if (welcomeBanner) {
         setTimeout(fecharWelcome, 6000);
 
-        // Fecha ao clicar fora do banner
         document.addEventListener('click', function(e) {
             if (welcomeBanner && !welcomeBanner.contains(e.target)) {
                 fecharWelcome();
             }
         });
 
-        // Fecha ao pressionar ESC
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 fecharWelcome();
@@ -139,8 +136,98 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // ===== ASIDE - TOGGLE PARA MOBILE =====
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebarContent = document.getElementById('sidebarContent');
+    let sidebarAberto = false;
+
+    if (sidebarToggle && sidebarContent) {
+        sidebarToggle.addEventListener('click', function() {
+            sidebarAberto = !sidebarAberto;
+            sidebarContent.classList.toggle('ativo');
+            
+            const toggleText = this.querySelector('.toggle-text');
+            const toggleIcon = this.querySelector('.toggle-icon');
+            
+            if (toggleText) {
+                toggleText.textContent = sidebarAberto ? 'Fechar' : 'Informações';
+            }
+            if (toggleIcon) {
+                toggleIcon.textContent = sidebarAberto ? '✕' : '📌';
+            }
+        });
+
+        document.addEventListener('click', function(e) {
+            const sidebar = document.getElementById('sidebar');
+            if (window.innerWidth <= 1024 && sidebar && !sidebar.contains(e.target)) {
+                if (sidebarAberto) {
+                    sidebarAberto = false;
+                    sidebarContent.classList.remove('ativo');
+                    
+                    const toggleText = sidebarToggle.querySelector('.toggle-text');
+                    const toggleIcon = sidebarToggle.querySelector('.toggle-icon');
+                    if (toggleText) toggleText.textContent = 'Informações';
+                    if (toggleIcon) toggleIcon.textContent = '📌';
+                }
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sidebarAberto) {
+                sidebarAberto = false;
+                sidebarContent.classList.remove('ativo');
+                
+                const toggleText = sidebarToggle.querySelector('.toggle-text');
+                const toggleIcon = sidebarToggle.querySelector('.toggle-icon');
+                if (toggleText) toggleText.textContent = 'Informações';
+                if (toggleIcon) toggleIcon.textContent = '📌';
+            }
+        });
+    }
+
+    // ===== VERIFICA TAMANHO DA TELA =====
+    function verificarTamanhoTela() {
+        if (window.innerWidth > 1024) {
+            if (sidebarContent) {
+                sidebarContent.classList.add('ativo');
+                sidebarContent.style.display = 'block';
+            }
+            if (sidebarToggle) {
+                sidebarToggle.style.display = 'none';
+            }
+        } else {
+            if (sidebarContent && !sidebarAberto) {
+                sidebarContent.classList.remove('ativo');
+                sidebarContent.style.display = '';
+            }
+            if (sidebarToggle) {
+                sidebarToggle.style.display = 'flex';
+            }
+        }
+    }
+
+    verificarTamanhoTela();
+    window.addEventListener('resize', verificarTamanhoTela);
+
+    // ===== LAZY LOADING PARA IMAGENS =====
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.loading = 'lazy';
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+
     // ===== LOG DE SUCESSO =====
     console.log('🚀 NUGEDIS Marechal - Site carregado com sucesso!');
     console.log('🏳️‍🌈 Respeito, diversidade e inclusão para todes!');
 
-}); // FECHA O DOMContentLoaded
+});

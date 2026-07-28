@@ -4,7 +4,7 @@
 - [x] Loading no site
 - [x] Botão de "voltar ao topo"
 - [x] Zoom padrão
-* [x] Adicionar Modo Escuro
+- [x] Adicionar Modo Escuro
 
 * [ ] Adicionar FAQ à seção "Sobre"
 * [ ] Calendário de Eventos Passados
