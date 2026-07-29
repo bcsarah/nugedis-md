@@ -70,7 +70,6 @@
 
     .sidebar-content {
         display: none;
-        animation: welcomeSlideDown 0.3s ease;
     }
 
     .sidebar-content.ativo {
@@ -179,7 +178,6 @@
 
     .sidebar-content {
         display: none;
-        animation: welcomeSlideDown 0.3s ease;
     }
 
     .sidebar-content.ativo {
