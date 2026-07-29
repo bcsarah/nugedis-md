@@ -11,23 +11,6 @@ body.dark-mode {
     background: #0f0f1a;
     color: #e8e8e8;
 
-    /* Scrollbar no modo escuro */
-    ::-webkit-scrollbar-track {
-        background: #1a1a2e;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, #ff4980, #752f96);
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(180deg, #ff789a, #993f5d);
-    }
-
-    * {
-        scrollbar-color: #ff4980 #1a1a2e;
-    }
-
     /* ===== HEADER ===== */
     header {
         background: #391d46;
@@ -69,20 +52,8 @@ body.dark-mode {
         }
     }
 
-    .card-membro:hover {
-        border-color: #ff789a;
-    }
-
-    .card-membro:hover h4 {
-        color: #ff789a;
-    }
-
     .grid-monitores .card-membro h4 {
         color: #ff789a;
-    }
-
-    .grid-monitores .card-membro:hover h4 {
-        color: #ffa1c1;
     }
 
     /* ===== LINKS SOCIAIS ===== */
@@ -101,26 +72,10 @@ body.dark-mode {
         background: var(--purpura-intermediario);
     }
 
-    #btnTopo:hover {
-        background: var(--purpura-claro);
-    }
-
-    .btn-dark-mode {
-        background: linear-gradient(135deg, #ff789a, #ff4980);
-    }
-
-    .btn-dark-mode:hover {
-        box-shadow: 0 0 20px rgba(255, 120, 154, 0.4);
-    }
-
     /* ===== ASIDE ===== */
     .aside-card {
         background: #1e1e32;
         border-left-color: var(--purpura-claro);
-    }
-
-    .aside-card:hover {
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     }
 
     .aside-card h4 {
@@ -132,11 +87,7 @@ body.dark-mode {
     }
 
     .sidebar-toggle {
-        background: linear-gradient(135deg, #3d1f4a, #5a2a5a);
-    }
-
-    .sidebar-toggle:hover {
-        box-shadow: 0 8px 25px rgba(255, 120, 154, 0.2);
+        background: #5a2a5a;
     }
 
     /* ===== FOOTER ===== */
@@ -151,11 +102,5 @@ body.dark-mode {
         a:hover {
             color: #ffc2d6;
         }
-    }
-
-    /* ===== BANNER ===== */
-    .welcome-banner {
-        background: linear-gradient(135deg, #2a1a3a, #3d1f4a);
-        border-color: rgba(255, 120, 154, 0.2);
     }
 }
