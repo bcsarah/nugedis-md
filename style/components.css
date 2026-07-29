@@ -185,7 +185,6 @@ modo escuro e a parte dos membros.
 
 .welcome-icon {
     font-size: 2.5rem;
-    animation: welcomePulse 2s ease-in-out infinite;
 }
 
 .welcome-title {
@@ -221,7 +220,6 @@ modo escuro e a parte dos membros.
 
 .welcome-close:hover {
     background: rgba(255, 255, 255, 0.4);
-    transform: scale(1.1);
 }
 
 /* Animações do Banner */
@@ -317,7 +315,6 @@ modo escuro e a parte dos membros.
 /* ===== SIDEBAR (ESQUERDA) ===== */
 .sidebar {
     position: sticky;
-    top: 20px;
     align-self: start;
     display: flex;
     flex-direction: column;
@@ -340,7 +337,6 @@ modo escuro e a parte dos membros.
     font-size: 1rem;
     font-weight: var(--font-peso-negrito);
     cursor: pointer;
-    transition: var(--transicao-media);
     width: 100%;
     display: flex;
     align-items: center;
@@ -359,11 +355,10 @@ modo escuro e a parte dos membros.
 /* Cards do Aside */
 .aside-card {
     background: var(--card-bg);
-    border-radius: var(--raio-borda-padrao);
+    border-radius: var(--raio-borda);
     padding: 1.5rem;
     box-shadow: 0 4px 15px var(--sombra-card);
     border-left: 4px solid var(--purpura);
-    transition: var(--transicao-media);
 }
 
 .aside-card h4 {

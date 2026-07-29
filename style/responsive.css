@@ -30,8 +30,7 @@
     }
 
     .grid-monitores {
-        grid-template-columns: repeat(3, 1fr);
-        /* 3 colunas em telas muito grandes */
+        grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
 
