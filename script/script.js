@@ -1,4 +1,3 @@
-
 // ========================================
 // DOM CONTENT LOADED
 // ========================================
@@ -137,13 +136,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // ==========================================
     // ===== ASIDE - TOGGLE PARA MOBILE =====
+    // ==========================================
     const sidebarToggle = document.getElementById('sidebarToggle');
     const sidebarContent = document.getElementById('sidebarContent');
     let sidebarAberto = false;
 
+    function verificarTamanhoTela() {
+        if (window.innerWidth > 1024) {
+            // Desktop: mostra sempre
+            if (sidebarContent) {
+                sidebarContent.classList.add('ativo');
+                sidebarContent.style.display = 'block';
+            }
+            if (sidebarToggle) {
+                sidebarToggle.style.display = 'none';
+            }
+        } else {
+            // Mobile: esconde inicialmente
+            if (sidebarContent && !sidebarAberto) {
+                sidebarContent.classList.remove('ativo');
+                sidebarContent.style.display = '';
+            }
+            if (sidebarToggle) {
+                sidebarToggle.style.display = 'flex';
+            }
+        }
+    }
+
     if (sidebarToggle && sidebarContent) {
-        sidebarToggle.addEventListener('click', function() {
+        // Verifica tamanho da tela ao carregar
+        verificarTamanhoTela();
+
+        // Evento de clique no toggle
+        sidebarToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
             sidebarAberto = !sidebarAberto;
             sidebarContent.classList.toggle('ativo');
             
@@ -158,6 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        // Fecha ao clicar fora (em mobile)
         document.addEventListener('click', function(e) {
             const sidebar = document.getElementById('sidebar');
             if (window.innerWidth <= 1024 && sidebar && !sidebar.contains(e.target)) {
@@ -173,6 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        // Fecha ao pressionar ESC
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && sidebarAberto) {
                 sidebarAberto = false;
@@ -184,47 +215,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (toggleIcon) toggleIcon.textContent = '📌';
             }
         });
-    }
 
-    // ===== VERIFICA TAMANHO DA TELA =====
-    function verificarTamanhoTela() {
-        if (window.innerWidth > 1024) {
-            if (sidebarContent) {
-                sidebarContent.classList.add('ativo');
-                sidebarContent.style.display = 'block';
-            }
-            if (sidebarToggle) {
-                sidebarToggle.style.display = 'none';
-            }
-        } else {
-            if (sidebarContent && !sidebarAberto) {
-                sidebarContent.classList.remove('ativo');
-                sidebarContent.style.display = '';
-            }
-            if (sidebarToggle) {
-                sidebarToggle.style.display = 'flex';
-            }
-        }
-    }
-
-    verificarTamanhoTela();
-    window.addEventListener('resize', verificarTamanhoTela);
-
-    // ===== LAZY LOADING PARA IMAGENS =====
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.loading = 'lazy';
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-        
-        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-            imageObserver.observe(img);
-        });
+        // Reavalia ao redimensionar
+        window.addEventListener('resize', verificarTamanhoTela);
     }
 
     // ===== LOG DE SUCESSO =====

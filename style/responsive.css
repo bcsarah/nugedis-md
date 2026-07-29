@@ -2,16 +2,14 @@
 
 /* Desktop padrão */
 @media (min-width: 1025px) {
-
-    /* Coordenadores - 2 colunas */
     .grid-coordenadores {
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
     }
 
-    /* Monitores - 4 colunas */
     .grid-monitores {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        /* Mudei de 4 para 2 */
         gap: 25px;
     }
 }
@@ -32,7 +30,14 @@
     }
 
     .grid-monitores {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 colunas em telas muito grandes */
         gap: 30px;
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr 4fr;
+        gap: 2.5rem;
     }
 }
 
@@ -46,6 +51,35 @@
     .grid-monitores {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .sidebar {
+        position: static;
+        gap: 1rem;
+        order: 0;
+    }
+
+    .sidebar-toggle {
+        display: flex !important;
+        margin-bottom: 0.5rem;
+    }
+
+    .sidebar-content {
+        display: none;
+        animation: welcomeSlideDown 0.3s ease;
+    }
+
+    .sidebar-content.ativo {
+        display: block !important;
+    }
+
+    .aside-card {
+        padding: 1.2rem;
     }
 }
 
@@ -126,6 +160,35 @@
     footer {
         font-size: 0.8rem;
         padding: 1rem;
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .sidebar {
+        position: static;
+        gap: 1rem;
+        order: 0;
+    }
+
+    .sidebar-toggle {
+        display: flex !important;
+        margin-bottom: 0.5rem;
+    }
+
+    .sidebar-content {
+        display: none;
+        animation: welcomeSlideDown 0.3s ease;
+    }
+
+    .sidebar-content.ativo {
+        display: block !important;
+    }
+
+    .aside-card {
+        padding: 1.2rem;
     }
 }
 
@@ -234,5 +297,22 @@
 
     #loading p {
         font-size: 0.9rem;
+    }
+
+    .aside-card {
+        padding: 1rem;
+    }
+
+    .aside-card h4 {
+        font-size: 1rem;
+    }
+
+    .sidebar-toggle {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .sidebar-toggle .toggle-icon {
+        font-size: 1.1rem;
     }
 }
