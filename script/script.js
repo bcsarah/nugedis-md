@@ -108,97 +108,45 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== BANNER DE BOAS-VINDAS =====
-    const welcomeBanner = document.getElementById('welcomeBanner');
-    
-    function fecharWelcome() {
-        if (welcomeBanner) {
-            welcomeBanner.style.animation = 'welcomeSlideUp 0.4s ease forwards';
-            setTimeout(() => {
-                welcomeBanner.style.display = 'none';
-            }, 400);
-        }
-    }
-
-    if (welcomeBanner) {
-        setTimeout(fecharWelcome, 6000);
-
-        document.addEventListener('click', function(e) {
-            if (welcomeBanner && !welcomeBanner.contains(e.target)) {
-                fecharWelcome();
-            }
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                fecharWelcome();
-            }
-        });
-    }
-
     // ==========================================
-    // ===== ASIDE - TOGGLE PARA MOBILE =====
+    // ===== ASIDE - TOGGLE =====
     // ==========================================
     const sidebarToggle = document.getElementById('sidebarToggle');
     const sidebarContent = document.getElementById('sidebarContent');
-    let sidebarAberto = false;
-
-    function verificarTamanhoTela() {
-        if (window.innerWidth > 1024) {
-            // Desktop: mostra sempre
-            if (sidebarContent) {
-                sidebarContent.classList.add('ativo');
-                sidebarContent.style.display = 'block';
-            }
-            if (sidebarToggle) {
-                sidebarToggle.style.display = 'none';
-            }
-        } else {
-            // Mobile: esconde inicialmente
-            if (sidebarContent && !sidebarAberto) {
-                sidebarContent.classList.remove('ativo');
-                sidebarContent.style.display = '';
-            }
-            if (sidebarToggle) {
-                sidebarToggle.style.display = 'flex';
-            }
-        }
-    }
+    let sidebarAberto = true;
 
     if (sidebarToggle && sidebarContent) {
-        // Verifica tamanho da tela ao carregar
-        verificarTamanhoTela();
+        // Estado inicial: aberto em desktop, fechado em mobile
+        function definirEstadoInicial() {
+            sidebarContent.style.display = 'none';
+            sidebarAberto = false;
+            sidebarToggle.querySelector('.toggle-text').textContent = 'Abrir';
+        }
 
         // Evento de clique no toggle
         sidebarToggle.addEventListener('click', function(e) {
             e.stopPropagation();
             
             sidebarAberto = !sidebarAberto;
-            sidebarContent.classList.toggle('ativo');
             
-            const toggleText = this.querySelector('.toggle-text');
-            const toggleIcon = this.querySelector('.toggle-icon');
-            
-            if (toggleText) {
-                toggleText.textContent = sidebarAberto ? 'Fechar' : 'Informações';
-            }
-            if (toggleIcon) {
-                toggleIcon.textContent = sidebarAberto ? '✕' : '📌';
+            if (sidebarAberto) {
+                sidebarContent.style.display = 'block';
+                this.querySelector('.toggle-text').textContent = 'Fechar';
+            } else {
+                sidebarContent.style.display = 'none';
+                this.querySelector('.toggle-text').textContent = 'Abrir';
             }
         });
 
-        // Fecha ao clicar fora (em mobile)
+        // Fecha ao clicar fora
         document.addEventListener('click', function(e) {
             const sidebar = document.getElementById('sidebar');
-            if (window.innerWidth <= 1024 && sidebar && !sidebar.contains(e.target)) {
+            if (sidebar && !sidebar.contains(e.target) && e.target !== sidebarToggle) {
                 if (sidebarAberto) {
                     sidebarAberto = false;
-                    sidebarContent.classList.remove('ativo');
-                    
+                    sidebarContent.style.display = 'none';
                     const toggleText = sidebarToggle.querySelector('.toggle-text');
-                    const toggleIcon = sidebarToggle.querySelector('.toggle-icon');
-                    if (toggleText) toggleText.textContent = 'Informações';
-                    if (toggleIcon) toggleIcon.textContent = '📌';
+                    if (toggleText) toggleText.textContent = 'Abrir';
                 }
             }
         });
@@ -207,17 +155,21 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && sidebarAberto) {
                 sidebarAberto = false;
-                sidebarContent.classList.remove('ativo');
-                
+                sidebarContent.style.display = 'none';
                 const toggleText = sidebarToggle.querySelector('.toggle-text');
-                const toggleIcon = sidebarToggle.querySelector('.toggle-icon');
-                if (toggleText) toggleText.textContent = 'Informações';
-                if (toggleIcon) toggleIcon.textContent = '📌';
+                if (toggleText) toggleText.textContent = 'Abrir';
             }
         });
 
-        // Reavalia ao redimensionar
-        window.addEventListener('resize', verificarTamanhoTela);
+        definirEstadoInicial();
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 1024 && !sidebarAberto) {
+                sidebarAberto = true;
+                sidebarContent.style.display = 'block';
+                sidebarToggle.querySelector('.toggle-text').textContent = 'Fechar';
+            }
+        });
     }
 
     // ===== LOG DE SUCESSO =====

@@ -1,20 +1,17 @@
 /* ===== RESPONSIVIDADE ===== */
 
-/* Desktop padrão */
-@media (min-width: 1025px) {
-    .grid-coordenadores {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
+/* Desktop e Tablet - Mesmo layout do celular */
+@media (min-width: 769px) {
+    .sidebar {
+        max-width: 800px;
     }
-
-    .grid-monitores {
-        grid-template-columns: repeat(2, 1fr);
-        /* Mudei de 4 para 2 */
-        gap: 25px;
+    
+    .main-content {
+        max-width: 800px;
     }
 }
 
-/* Telas muito grandes */
+/* Telas muito grandes - Apenas aumenta a largura máxima */
 @media (min-width: 1400px) {
     html {
         font-size: 118%;
@@ -25,18 +22,12 @@
         padding: var(--espacamento-grande) var(--espacamento-gigante);
     }
 
-    .grid-coordenadores {
-        gap: 30px;
+    .sidebar {
+        max-width: 900px;
     }
-
-    .grid-monitores {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-
-    .main-grid {
-        grid-template-columns: 1fr 4fr;
-        gap: 2.5rem;
+    
+    .main-content {
+        max-width: 900px;
     }
 }
 
@@ -50,34 +41,6 @@
     .grid-monitores {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-    }
-
-    .main-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .sidebar {
-        position: static;
-        gap: 1rem;
-        order: 0;
-    }
-
-    .sidebar-toggle {
-        display: flex !important;
-        margin-bottom: 0.5rem;
-    }
-
-    .sidebar-content {
-        display: none;
-    }
-
-    .sidebar-content.ativo {
-        display: block !important;
-    }
-
-    .aside-card {
-        padding: 1.2rem;
     }
 }
 
@@ -160,32 +123,12 @@
         padding: 1rem;
     }
 
-    .main-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
     .sidebar {
-        position: static;
-        gap: 1rem;
-        order: 0;
+        max-width: 100%;
     }
-
-    .sidebar-toggle {
-        display: flex !important;
-        margin-bottom: 0.5rem;
-    }
-
-    .sidebar-content {
-        display: none;
-    }
-
-    .sidebar-content.ativo {
-        display: block !important;
-    }
-
-    .aside-card {
-        padding: 1.2rem;
+    
+    .main-content {
+        max-width: 100%;
     }
 }
 
@@ -307,9 +250,5 @@
     .sidebar-toggle {
         padding: 0.6rem 1rem;
         font-size: 0.9rem;
-    }
-
-    .sidebar-toggle .toggle-icon {
-        font-size: 1.1rem;
     }
 }
