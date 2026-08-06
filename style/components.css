@@ -163,19 +163,10 @@ aside {
     max-width: 100%;
 }
 
-aside h4 {
-    color: var(--purpura);
-    font-size: 1.1rem;
-    font-weight: var(--font-peso-negrito);
-    margin-bottom: 1rem;
-    font-family: var(--font-titulo);
-}
-
-aside p {
-    color: var(--texto-escuro);
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+aside br {
+    display: block;
+    content: "";
+    margin: 10px 0; /* Ajuste o valor conforme necessário */
 }
 
 /* Botão Toggle - VISÍVEL EM TODOS OS DISPOSITIVOS */
@@ -205,7 +196,9 @@ aside p {
 }
 
 /* Estado FECHADO - esconde todo o conteúdo do aside (exceto o botão) */
-aside.fechado h4,
+aside.fechado h3,
+aside.fechado br,
+aside.fechado li,
 aside.fechado p,
 aside.fechado .social-grid {
     display: none;
