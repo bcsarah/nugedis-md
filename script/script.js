@@ -19,42 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ===== BOTÃO VOLTAR AO TOPO =====
-    const btnTopo = document.getElementById('btnTopo');
-
-    function toggleTopButton() {
-        if (btnTopo) {
-            if (window.scrollY > 300) {
-                btnTopo.style.display = 'flex';
-                btnTopo.style.opacity = '0';
-                btnTopo.style.transform = 'scale(0.8)';
-                setTimeout(() => {
-                    btnTopo.style.opacity = '1';
-                    btnTopo.style.transform = 'scale(1)';
-                }, 50);
-            } else {
-                btnTopo.style.display = 'none';
-            }
-        }
-    }
-
-    let scrollTimeout;
-    window.addEventListener('scroll', function() {
-        if (scrollTimeout) {
-            window.cancelAnimationFrame(scrollTimeout);
-        }
-        scrollTimeout = window.requestAnimationFrame(toggleTopButton);
-    });
-
-    if (btnTopo) {
-        btnTopo.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-    
     // ===== TELA DE LOADING =====
     window.addEventListener('load', function() {
         const loading = document.getElementById('loading');
@@ -66,23 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 800);
             }, 800);
         }
-    });
-
-    // ===== SCROLL SUAVE PARA LINKS ÂNCORA =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
-            
-            const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
     });
 
     // ===== MODO ESCURO =====
@@ -108,9 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================
     // ===== ASIDE - TOGGLE =====
-    // ==========================================
     const sidebarToggle = document.getElementById('sidebarToggle');
     const sidebarContent = document.getElementById('sidebarContent');
     let sidebarAberto = true;

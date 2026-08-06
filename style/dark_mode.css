@@ -67,11 +67,6 @@ body.dark-mode {
         color: #1e1e32;
     }
 
-    /* ===== BOTÕES ===== */
-    #btnTopo {
-        background: var(--purpura-intermediario);
-    }
-
     /* ===== ASIDE ===== */
     .aside-card {
         background: #1e1e32;

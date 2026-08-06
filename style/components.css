@@ -4,8 +4,7 @@ Componentes do Site
 Esse arquivo mexe com parte das partes criadas,
 como links sociais, entre outros.
 Alterar esse arquivo implica alterar os cards,
-links sociais, botões de voltar ao topo e
-modo escuro e a parte dos membros.
+links sociais, modo escuro e a parte dos membros.
 */
 
 /* ===== CARDS ===== */
@@ -117,25 +116,6 @@ modo escuro e a parte dos membros.
     line-height: 1.5;
     font-size: 0.9rem;
     margin-top: 6px;
-}
-
-/* ===== BOTÃO VOLTAR AO TOPO ===== */
-#btnTopo {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: var(--purpura-intermediario);
-    color: var(--branco);
-    border: none;
-    border-radius: var(--raio-borda-circular);
-    width: 55px;
-    height: 55px;
-    font-size: 28px;
-    cursor: pointer;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
 }
 
 /* ===== BOTÃO MODO ESCURO ===== */
