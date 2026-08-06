@@ -1,33 +1,36 @@
 /* ===== RESPONSIVIDADE ===== */
 
-/* Desktop e Tablet - Mesmo layout do celular */
-@media (min-width: 769px) {
-    .sidebar {
-        max-width: 800px;
+/* Desktop padrão */
+@media (min-width: 1025px) {
+    .grid-coordenadores {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
-    
-    .main-content {
-        max-width: 800px;
+
+    .grid-monitores {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
 }
 
-/* Telas muito grandes - Apenas aumenta a largura máxima */
+/* Telas muito grandes */
 @media (min-width: 1400px) {
     html {
         font-size: 118%;
     }
 
-    .container {
+    main {
         max-width: var(--tamanho-maximo-grande);
         padding: var(--espacamento-grande) var(--espacamento-gigante);
     }
 
-    .sidebar {
-        max-width: 900px;
+    .grid-coordenadores {
+        gap: 30px;
     }
-    
-    .main-content {
-        max-width: 900px;
+
+    .grid-monitores {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
     }
 }
 
@@ -68,7 +71,7 @@
         margin: 0.2rem;
     }
 
-    .container {
+    main {
         padding: var(--espacamento-padrao);
     }
 
@@ -123,12 +126,8 @@
         padding: 1rem;
     }
 
-    .sidebar {
-        max-width: 100%;
-    }
-    
-    .main-content {
-        max-width: 100%;
+    aside {
+        padding: 1.2rem;
     }
 }
 
@@ -156,7 +155,7 @@
         min-width: 55px;
     }
 
-    .container {
+    main {
         padding: var(--espacamento-pequeno);
     }
 
@@ -239,11 +238,11 @@
         font-size: 0.9rem;
     }
 
-    .aside-card {
+    aside {
         padding: 1rem;
     }
 
-    .aside-card h4 {
+    aside h4 {
         font-size: 1rem;
     }
 

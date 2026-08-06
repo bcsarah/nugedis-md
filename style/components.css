@@ -20,7 +20,7 @@ links sociais, modo escuro e a parte dos membros.
         font-size: 2rem;
         margin-bottom: var(--espacamento-padrao);
         border-left: 5px solid var(--violeta-escuro);
-        border-radius: 5px;
+        border-radius: 3px;
         padding-left: var(--espacamento-padrao);
     }
 }
@@ -65,7 +65,7 @@ links sociais, modo escuro e a parte dos membros.
     grid-template-columns: repeat(2, 1fr);
 }
 
-/* Monitores - Grid de 4 colunas */
+/* Monitores - Grid de 2 colunas */
 .grid-monitores {
     grid-template-columns: repeat(2, 1fr);
 }
@@ -77,6 +77,7 @@ links sociais, modo escuro e a parte dos membros.
     text-align: center;
     cursor: pointer;
     border: 2px solid transparent;
+    transition: var(--transicao-media);
 }
 
 /* Cards dos Monitores */
@@ -93,6 +94,12 @@ links sociais, modo escuro e a parte dos membros.
     margin: 0 auto 15px;
     border: 2px solid #ab47bc;
     display: block;
+    transition: var(--transicao-media);
+}
+
+/* Foto dos Monitores */
+.grid-monitores .card-membro img {
+    border-color: #f06292;
 }
 
 /* Nome dos Membros */
@@ -139,36 +146,36 @@ links sociais, modo escuro e a parte dos membros.
    ======================================== */
 
 /* Container principal */
-.container {
+main {
     max-width: var(--tamanho-maximo);
     margin: 0 auto;
     padding: var(--espacamento-grande) var(--espacamento-padrao);
     flex: 1;
 }
 
-/* Layout sem grid - aside em cima do conteúdo */
-.main-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    max-width: var(--tamanho-maximo);
-    margin: 0 auto;
+/* ===== ASIDE ===== */
+aside {
+    background: var(--card-bg);
+    border-radius: var(--raio-borda);
+    padding: 1.5rem;
+    margin-bottom: var(--espacamento-grande);
+    box-shadow: 0 4px 15px var(--sombra-card);
+    max-width: 100%;
 }
 
-/* ===== SIDEBAR (EM CIMA DO CONTEÚDO) ===== */
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-    max-width: 800px; /* Limita a largura para não ficar muito largo */
-    margin: 0 auto; /* Centraliza */
+aside h4 {
+    color: var(--purpura);
+    font-size: 1.1rem;
+    font-weight: var(--font-peso-negrito);
+    margin-bottom: 1rem;
+    font-family: var(--font-titulo);
 }
 
-.main-content {
-    width: 100%;
-    max-width: 800px; /* Mesma largura do aside */
-    margin: 0 auto; /* Centraliza */
+aside p {
+    color: var(--texto-escuro);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
 /* Botão Toggle - VISÍVEL EM TODOS OS DISPOSITIVOS */
@@ -186,6 +193,7 @@ links sociais, modo escuro e a parte dos membros.
     align-items: center;
     justify-content: center;
     gap: 0.8rem;
+    margin-bottom: 1rem;
 }
 
 .sidebar-toggle:hover {
@@ -196,42 +204,61 @@ links sociais, modo escuro e a parte dos membros.
     font-size: 0.95rem;
 }
 
-/* Cards do Aside */
-.aside-card {
-    background: var(--card-bg);
-    border-radius: var(--raio-borda);
-    padding: 1.5rem;
-    box-shadow: 0 4px 15px var(--sombra-card);
-    border-left: 4px solid var(--purpura);
-}
-
-.aside-card h4 {
-    color: var(--purpura);
-    font-size: 1.1rem;
-    font-weight: var(--font-peso-negrito);
-    margin-bottom: 1rem;
-    font-family: var(--font-titulo);
-}
-
-.aside-card p {
-    color: var(--texto-escuro);
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+/* Estado FECHADO - esconde todo o conteúdo do aside (exceto o botão) */
+aside.fechado h4,
+aside.fechado p,
+aside.fechado .social-grid {
+    display: none;
 }
 
 /* ===== MODO ESCURO ===== */
-body.dark-mode .aside-card {
-    background: var(--dark-bg-card);
+body.dark-mode .card {
+    background: #1e1e32;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .card h3 {
+    color: #ff789a;
+    border-left-color: #ff789a;
+}
+
+body.dark-mode .card-membro {
+    background: #2a1a3a;
+}
+
+body.dark-mode .card-membro h4 {
+    color: #ab47bc;
+}
+
+body.dark-mode .card-membro p {
+    color: #b8b8d0;
+}
+
+body.dark-mode .grid-monitores .card-membro h4 {
+    color: #ff789a;
+}
+
+body.dark-mode .social-link {
+    background: #2a1a3a;
+    color: #ff789a;
+}
+
+body.dark-mode .social-link:hover {
+    background: #ff4980;
+    color: #1e1e32;
+}
+
+body.dark-mode aside {
+    background: #1e1e32;
     border-left-color: var(--purpura-claro);
 }
 
-body.dark-mode .aside-card h4 {
+body.dark-mode aside h4 {
     color: var(--purpura-claro);
 }
 
-body.dark-mode .aside-card p {
-    color: var(--dark-texto-secundario);
+body.dark-mode aside p {
+    color: #b8b8d0;
 }
 
 body.dark-mode .sidebar-toggle {

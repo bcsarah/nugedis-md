@@ -55,67 +55,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== ASIDE - TOGGLE =====
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const sidebarContent = document.getElementById('sidebarContent');
-    let sidebarAberto = true;
+// ===== ASIDE - TOGGLE =====
+const sidebarToggle = document.getElementById('sidebarToggle');
+const aside = document.querySelector('aside');
+let asideAberto = false;
 
-    if (sidebarToggle && sidebarContent) {
-        // Estado inicial: aberto em desktop, fechado em mobile
-        function definirEstadoInicial() {
-            sidebarContent.style.display = 'none';
-            sidebarAberto = false;
-            sidebarToggle.querySelector('.toggle-text').textContent = 'Abrir';
+if (sidebarToggle && aside) {
+    // Estado inicial: fechado
+    aside.classList.add('fechado');
+    sidebarToggle.querySelector('.toggle-text').textContent = 'Abrir';
+
+    // Evento de clique no toggle
+    sidebarToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        
+        asideAberto = !asideAberto;
+        aside.classList.toggle('fechado');
+        
+        if (asideAberto) {
+            this.querySelector('.toggle-text').textContent = 'Fechar';
+        } else {
+            this.querySelector('.toggle-text').textContent = 'Abrir';
         }
-
-        // Evento de clique no toggle
-        sidebarToggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            
-            sidebarAberto = !sidebarAberto;
-            
-            if (sidebarAberto) {
-                sidebarContent.style.display = 'block';
-                this.querySelector('.toggle-text').textContent = 'Fechar';
-            } else {
-                sidebarContent.style.display = 'none';
-                this.querySelector('.toggle-text').textContent = 'Abrir';
-            }
-        });
-
-        // Fecha ao clicar fora
-        document.addEventListener('click', function(e) {
-            const sidebar = document.getElementById('sidebar');
-            if (sidebar && !sidebar.contains(e.target) && e.target !== sidebarToggle) {
-                if (sidebarAberto) {
-                    sidebarAberto = false;
-                    sidebarContent.style.display = 'none';
-                    const toggleText = sidebarToggle.querySelector('.toggle-text');
-                    if (toggleText) toggleText.textContent = 'Abrir';
-                }
-            }
-        });
-
-        // Fecha ao pressionar ESC
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && sidebarAberto) {
-                sidebarAberto = false;
-                sidebarContent.style.display = 'none';
-                const toggleText = sidebarToggle.querySelector('.toggle-text');
-                if (toggleText) toggleText.textContent = 'Abrir';
-            }
-        });
-
-        definirEstadoInicial();
-
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 1024 && !sidebarAberto) {
-                sidebarAberto = true;
-                sidebarContent.style.display = 'block';
-                sidebarToggle.querySelector('.toggle-text').textContent = 'Fechar';
-            }
-        });
-    }
+    });
+}
 
     // ===== LOG DE SUCESSO =====
     console.log('🚀 NUGEDIS Marechal - Site carregado com sucesso!');
