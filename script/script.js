@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.textContent = '🌙';
             }
         });
+
     }
 
 // ===== ASIDE - TOGGLE =====
@@ -78,6 +79,22 @@ if (sidebarToggle && aside) {
             this.querySelector('.toggle-text').textContent = 'Abrir';
         }
     });
+
+    // Função para ler arquivos dentro de DATA
+    async function carregarArquivo(elemento) {
+        const nomeArquivo = elemento.dataset.arquivo; // Pega o nome do data-arquivo
+        
+        try {
+            const resposta = await fetch(`data/${nomeArquivo}`);
+            const texto = await resposta.text();
+            elemento.innerHTML = texto.replace(/\n/g, '<br>');
+        } catch (erro) {
+            elemento.textContent = `Erro ao carregar ${nomeArquivo}.`;
+        }
+    }
+
+    // CARREGA TODOS OS <p> COM data-arquivo
+    document.querySelectorAll('.textoArquivo').forEach(carregarArquivo);
 }
 
     // ===== LOG DE SUCESSO =====
