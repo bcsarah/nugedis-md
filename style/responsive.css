@@ -1,78 +1,109 @@
 /* ===== RESPONSIVIDADE ===== */
 
-/* Desktop padrão */
+/* Desktop (1025px ou mais) */
 @media (min-width: 1025px) {
-    .grid-coordenadores {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-
-    .grid-monitores {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-}
-
-/* Telas muito grandes */
-@media (min-width: 1400px) {
     html {
-        font-size: 118%;
+        font-size: 100%;
     }
 
     main {
-        max-width: var(--tamanho-maximo-grande);
-        padding: var(--espacamento-grande) var(--espacamento-gigante);
+        max-width: var(--tamanho-maximo);
+        padding: var(--espacamento-grande) var(--espacamento-padrao);
     }
 
     .grid-coordenadores {
-        gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
 
-    .grid-monitores {
+    .grid-monitores1 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .grid-monitores2 {
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+        gap: 25px;
     }
 }
 
-/* Tablets (769px - 1024px) */
+/* Tablet (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
+    html {
+        font-size: 100%;
+    }
+
+    main {
+        padding: var(--espacamento-padrao);
+    }
+
     .grid-coordenadores {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
 
-    .grid-monitores {
+    .grid-monitores1 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .grid-monitores2 {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header h2 {
+        font-size: 1.1rem;
+    }
+
+    header img {
+        max-width: 140px;
+    }
+
+    .card h3 {
+        font-size: 1.6rem;
+    }
+
+    .card-membro img {
+        width: 130px;
+        height: 130px;
+    }
 }
 
-/* Celulares grandes (até 768px) */
+/* Celular (até 768px) */
 @media (max-width: 768px) {
     html {
         font-size: 100%;
     }
 
+    main {
+        padding: var(--espacamento-padrao);
+    }
+
+    header {
+        padding: 1rem 0.8rem;
+    }
+
     header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     header h2 {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     header img {
-        max-width: 130px;
+        max-width: 120px;
     }
 
     nav a {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         padding: 0.3rem 0.7rem;
         margin: 0.2rem;
-    }
-
-    main {
-        padding: var(--espacamento-padrao);
     }
 
     .card {
@@ -80,29 +111,55 @@
     }
 
     .card h3 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .grid-monitores2 {
+        max-width: 900px;
     }
 
     .grid-coordenadores,
-    .grid-monitores {
+    .grid-monitores1,
+    .grid-monitores2 {
         grid-template-columns: 1fr;
-        gap: 20px;
-        max-width: 400px;
+        gap: 10px;
+        max-width: 600px;
         margin: 0 auto;
     }
 
+    .grid-monitores2 {
+        padding: 0.8rem;
+    }
+
+    .card-membro {
+        padding: var(--espacamento-pequeno);
+    }
+
     .card-membro img {
-        width: 130px;
-        height: 130px;
+        width: 120px;
+        height: 120px;
     }
 
     .card-membro h4 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .card-membro p {
+        font-size: 0.9rem;
+    }
+
+    .social-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
     }
 
     .social-link {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
     }
 
     #btnTopo {
@@ -129,121 +186,19 @@
     aside {
         padding: 1.2rem;
     }
-}
-
-/* Celulares pequenos (até 480px) */
-@media (max-width: 480px) {
-    header {
-        padding: 1rem 0.8rem;
-    }
-
-    header img {
-        max-width: 100px;
-    }
-
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    header h2 {
-        font-size: 0.8rem;
-    }
-
-    nav a {
-        font-size: 0.75rem;
-        padding: 0.25rem 0.5rem;
-        min-width: 55px;
-    }
-
-    main {
-        padding: var(--espacamento-pequeno);
-    }
-
-    .card {
-        padding: var(--espacamento-pequeno);
-        border-radius: 12px;
-    }
-
-    .card h3 {
-        font-size: 1.2rem;
-        border-left-width: 3px;
-        padding-left: 0.8rem;
-    }
-
-    .grid-coordenadores,
-    .grid-monitores {
-        gap: 15px;
-        max-width: 100%;
-    }
-
-    .card-membro {
-        padding: var(--espacamento-pequeno);
-    }
-
-    .card-membro img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .card-membro h4 {
-        font-size: 1rem;
-    }
-
-    .card-membro p {
-        font-size: 0.8rem;
-    }
-
-    .social-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.6rem;
-    }
-
-    .social-link {
-        width: 100%;
-        max-width: 250px;
-        justify-content: center;
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
-    }
-
-    #btnTopo {
-        width: 38px;
-        height: 38px;
-        font-size: 16px;
-        bottom: 12px;
-        right: 12px;
-    }
-
-    .btn-dark-mode {
-        width: 36px;
-        height: 36px;
-        font-size: 14px;
-        top: 10px;
-        right: 10px;
-    }
-
-    footer {
-        font-size: 0.65rem;
-        padding: 0.8rem;
-    }
 
     .loader {
-        width: 40px;
-        height: 40px;
-        border-width: 4px;
+        width: 45px;
+        height: 45px;
+        border-width: 5px;
     }
 
     #loading p {
-        font-size: 0.9rem;
-    }
-
-    aside {
-        padding: 1rem;
+        font-size: 1rem;
     }
 
     .sidebar-toggle {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+        font-size: 1rem;
     }
 }

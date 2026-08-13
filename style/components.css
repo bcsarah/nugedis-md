@@ -65,8 +65,12 @@ links sociais, modo escuro e a parte dos membros.
     grid-template-columns: repeat(2, 1fr);
 }
 
-/* Monitores - Grid de 2 colunas */
-.grid-monitores {
+/* Monitores - Grids separados */
+.grid-monitores1 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-monitores2 {
     grid-template-columns: repeat(2, 1fr);
 }
 
@@ -77,11 +81,11 @@ links sociais, modo escuro e a parte dos membros.
     text-align: center;
     cursor: pointer;
     border: 2px solid transparent;
-    transition: var(--transicao-media);
 }
 
 /* Cards dos Monitores */
-.grid-monitores .card-membro {
+.grid-monitores1 .card-membro,
+.grid-monitores2 .card-membro {
     background: var(--monitor-bg);
 }
 
@@ -94,11 +98,11 @@ links sociais, modo escuro e a parte dos membros.
     margin: 0 auto 15px;
     border: 2px solid #ab47bc;
     display: block;
-    transition: var(--transicao-media);
 }
 
 /* Foto dos Monitores */
-.grid-monitores .card-membro img {
+.grid-monitores1 .card-membro img,
+.grid-monitores2 .card-membro img {
     border-color: #f06292;
 }
 
@@ -113,7 +117,8 @@ links sociais, modo escuro e a parte dos membros.
 }
 
 /* Nome dos Monitores */
-.grid-monitores .card-membro h4 {
+.grid-monitores1 .card-membro h4,
+.grid-monitores2 .card-membro h4 {
     color: #c2185b;
 }
 

@@ -52,7 +52,8 @@ body.dark-mode {
         }
     }
 
-    .grid-monitores .card-membro h4 {
+    .grid-monitores1 .card-membro h4,
+    .grid-monitores2 .card-membro h4 {
         color: #ff789a;
     }
 
