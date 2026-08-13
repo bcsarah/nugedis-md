@@ -32,6 +32,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // ===== BOTÃO VOLTAR AO TOPO =====
+    const btnTopo = document.getElementById('btnTopo');
+
+    function toggleTopButton() {
+        if (btnTopo) {
+            if (window.scrollY > 300) {
+                btnTopo.style.display = 'flex';
+                btnTopo.style.opacity = '0';
+                btnTopo.style.transform = 'scale(0.8)';
+                setTimeout(() => {
+                    btnTopo.style.opacity = '1';
+                    btnTopo.style.transform = 'scale(1)';
+                }, 50);
+            } else {
+                btnTopo.style.display = 'none';
+            }
+        }
+    }
+
+    // Usando requestAnimationFrame para melhor performance
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+            window.cancelAnimationFrame(scrollTimeout);
+        }
+        scrollTimeout = window.requestAnimationFrame(toggleTopButton);
+    });
+
+    // Clique para voltar ao topo
+    if (btnTopo) {
+        btnTopo.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
     // ===== MODO ESCURO =====
     const darkModeToggle = document.getElementById('darkModeToggle');
 

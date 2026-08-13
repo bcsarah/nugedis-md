@@ -146,6 +146,10 @@ links sociais, modo escuro e a parte dos membros.
     z-index: 1000;
 }
 
+.btn-dark-mode:hover {
+    background: var(--purpura-claro);
+}
+
 /* ========================================
    ASIDE - BARRA SUPERIOR (Desktop e Mobile)
    ======================================== */
@@ -213,6 +217,35 @@ aside.fechado li,
 aside.fechado p,
 aside.fechado .social-grid {
     display: none;
+}
+
+/* ===== BOTÃO VOLTAR AO TOPO ===== */
+#btnTopo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--purpura-intermediario);
+    color: var(--branco);
+    border: none;
+    border-radius: var(--raio-borda-circular);
+    width: 55px;
+    height: 55px;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#btnTopo:hover {
+    background: var(--purpura-claro);
+}
+
+/* Ícone com animação */
+#btnTopo::before {
+    display: inline-block;
+    transition: transform 0.3s ease;
 }
 
 /* ===== MODO ESCURO ===== */
