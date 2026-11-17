@@ -5,11 +5,16 @@
 - [x] Botão de "voltar ao topo"
 - [x] Zoom padrão
 - [x] Adicionar Modo Escuro
+- [x] Eventos Passados
 
-* [ ] Adicionar FAQ à seção "Sobre"
-* [ ] Calendário de Eventos Passados
+* [ ] Ajustar Favicon
+* [ ] Melhorar o HTML/CSS
+* [ ] Ajustar css e deixa-lo mais simples
+* [ ] Voltar com o 1 minuto de militância
 * [ ] Mídia/Galeria
-* [ ] Blog/Notícias
+
+- [ ] Adicionar FAQ à seção "Sobre"
+- [ ] Blog/Notícias
 
 ### A decidir
 * [ ] Seção "Recursos e Materiais" (PDFs etc)
