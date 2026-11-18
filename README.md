@@ -7,9 +7,9 @@
 - [x] Adicionar Modo Escuro
 - [x] Eventos Passados
 
-* [ ] Ajustar Favicon
+* [x] Ajustar Favicon
+* [x] Ajustar css e deixa-lo mais simples
 * [ ] Melhorar o HTML/CSS
-* [ ] Ajustar css e deixa-lo mais simples
 * [ ] Voltar com o 1 minuto de militância
 * [ ] Mídia/Galeria
 

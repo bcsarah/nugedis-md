@@ -143,6 +143,12 @@ function configurarBarraLateral() {
     });
 }
 
+/* == Melhora da tag A == */
+document.querySelectorAll('a[href^="http"]').forEach(link => {
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
+});
+
 /* ===== INICIALIZAÇÃO ===== */
 document.addEventListener("DOMContentLoaded", () => {
     configurarNavegacao();
@@ -151,3 +157,4 @@ document.addEventListener("DOMContentLoaded", () => {
     configurarModoEscuro();
     configurarBarraLateral();
 });
+
