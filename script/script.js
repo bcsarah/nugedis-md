@@ -1,5 +1,6 @@
-/*
- * SCRIPT PRINCIPAL
+/* @author bcsarah@script.js
+ *
+ * Arquivo JS principal do site.
  * Cada função configura uma parte específica da página.
  */
 

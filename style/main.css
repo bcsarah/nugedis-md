@@ -1,9 +1,10 @@
-/*
- * Arquivo principal de estilos.
- * A ordem importa: primeiro a base, depois os componentes e os ajustes visuais.
+/* @author bcsarah@main.css
+ *
+ * Este arquivo importa e organiza os demais arquivos CSS do projeto.
  */
+
 @import url("./base.css");
-@import url("./componentes.css");
+@import url("./components.css");
 @import url("./dark_mode.css");
 @import url("./responsive.css");
 @import url("./loading.css");
