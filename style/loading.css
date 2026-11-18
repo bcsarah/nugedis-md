@@ -1,0 +1,69 @@
+/*
+ * LOADING
+ * Tela exibida enquanto o navegador carrega os recursos da página.
+ */
+
+#loading {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--purpura-claro);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#loading.esconder {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    margin-bottom: var(--espacamento-padrao);
+    border: 5px solid #ffffff4d;
+    border-top-color: var(--branco);
+    border-radius: var(--raio-borda-circular);
+    animation: girar 1s linear infinite;
+}
+
+#loading p {
+    color: var(--branco);
+    font-size: 1.2rem;
+    font-weight: var(--font-peso-normal);
+    letter-spacing: 2px;
+    animation: pulsar 1.5s ease-in-out infinite;
+}
+
+@keyframes girar {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulsar {
+    0%, 100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .loader {
+        width: 45px;
+        height: 45px;
+    }
+
+    #loading p {
+        font-size: 1rem;
+    }
+}

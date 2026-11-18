@@ -1,55 +1,12 @@
-/* ===== RESPONSIVIDADE ===== */
+/*
+ * RESPONSIVIDADE
+ * Ajustes específicos para tablets e celulares.
+ */
 
-/* Desktop (1025px ou mais) */
-@media (min-width: 1025px) {
-    html {
-        font-size: 100%;
-    }
-
-    main {
-        max-width: var(--tamanho-maximo);
-        padding: var(--espacamento-grande) var(--espacamento-padrao);
-    }
-
-    .grid-coordenadores {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-
-    .grid-monitores1 {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-    }
-
-    .grid-monitores2 {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-}
-
-/* Tablet (769px - 1024px) */
+/* ===== TABLETS ===== */
 @media (min-width: 769px) and (max-width: 1024px) {
-    html {
-        font-size: 100%;
-    }
-
-    main {
-        padding: var(--espacamento-padrao);
-    }
-
-    .grid-coordenadores {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .grid-monitores1 {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-    }
-
-    .grid-monitores2 {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+    header img {
+        max-width: 140px;
     }
 
     header h1 {
@@ -60,8 +17,8 @@
         font-size: 1.1rem;
     }
 
-    header img {
-        max-width: 140px;
+    main {
+        padding: var(--espacamento-padrao);
     }
 
     .card h3 {
@@ -72,20 +29,24 @@
         width: 130px;
         height: 130px;
     }
+
+    .grid-monitores1 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
-/* Celular (até 768px) */
+/* ===== CELULARES ===== */
 @media (max-width: 768px) {
-    html {
+    body {
         font-size: 100%;
-    }
-
-    main {
-        padding: var(--espacamento-padrao);
     }
 
     header {
         padding: 1rem 0.8rem;
+    }
+
+    header img {
+        max-width: 120px;
     }
 
     header h1 {
@@ -96,14 +57,21 @@
         font-size: 0.9rem;
     }
 
-    header img {
-        max-width: 120px;
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.25rem;
     }
 
     nav a {
-        font-size: 0.85rem;
-        padding: 0.3rem 0.7rem;
         margin: 0.2rem;
+        padding: 0.3rem 0.7rem;
+        font-size: 0.85rem;
+    }
+
+    main {
+        padding: var(--espacamento-padrao);
     }
 
     .card {
@@ -114,21 +82,14 @@
         font-size: 1.4rem;
     }
 
-    .grid-monitores2 {
-        max-width: 900px;
-    }
-
     .grid-coordenadores,
     .grid-monitores1,
     .grid-monitores2 {
         grid-template-columns: 1fr;
         gap: 10px;
         max-width: 600px;
-        margin: 0 auto;
-    }
-
-    .grid-monitores2 {
-        padding: 0.8rem;
+        margin-right: auto;
+        margin-left: auto;
     }
 
     .card-membro {
@@ -155,50 +116,34 @@
     }
 
     .social-link {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
         width: 100%;
         max-width: 250px;
-        justify-content: center;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
     }
 
     #btnTopo {
+        right: 20px;
+        bottom: 20px;
         width: 45px;
         height: 45px;
         font-size: 22px;
-        bottom: 20px;
-        right: 20px;
     }
 
     .btn-dark-mode {
+        top: 15px;
+        right: 15px;
         width: 45px;
         height: 45px;
         font-size: 20px;
-        top: 15px;
-        right: 15px;
-    }
-
-    footer {
-        font-size: 0.8rem;
-        padding: 1rem;
     }
 
     aside {
         padding: 1.2rem;
     }
 
-    .loader {
-        width: 45px;
-        height: 45px;
-        border-width: 5px;
-    }
-
-    #loading p {
-        font-size: 1rem;
-    }
-
-    .sidebar-toggle {
-        padding: 0.7rem 1.2rem;
-        font-size: 1rem;
+    footer {
+        padding: 1rem;
+        font-size: 0.8rem;
     }
 }

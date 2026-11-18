@@ -1,102 +1,93 @@
 /*
-Dark Mode
-
-Esse arquivo mexe com o modo escuro do site.
-O site precisa desse arquivo separado para o modo escuro,
-sem ele, as funcionalidades CSS não irão funcionar.
-Alterar esse arquivo implica alterar apenas as funcionalidades do modo escuro do site.
-*/
+ * MODO ESCURO
+ * As variáveis abaixo substituem as cores do tema claro.
+ */
 
 body.dark-mode {
-    background: #0f0f1a;
-    color: #e8e8e8;
+    --preto: #e8e8e8;
+    --cinza-claro: #0f0f1a;
+    --cinza-escuro: #8888aa;
+    --texto-escuro: #b8b8d0;
 
-    /* ===== HEADER ===== */
-    header {
-        background: #391d46;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    }
+    --card-bg: #1e1e32;
+    --card-shadow: #00000070;
+    --membro-bg: #2a1a3a;
+    --monitor-bg: #352039;
 
-    /* ===== NAVEGADOR ===== */
-    nav {
-        background-color: #2a1a3a;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    --link-color: #ff789a;
+    --link-hover: #ffc2d6;
+    --link-bg: #2a1a3a;
+    --link-bg-hover: #ff4980;
 
-        a:hover {
-            background-color: #4a2a5a;
-            color: #ff789a;
-        }
-    }
+    color: var(--preto);
+    background: var(--cinza-claro);
+}
 
-    /* ===== CARDS ===== */
-    .card {
-        background: #1e1e32;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-    }
+body.dark-mode header {
+    background: #391d46;
+    box-shadow: 0 4px 20px #00000080;
+}
 
-    .card h3 {
-        color: #ff789a;
-        border-left-color: #ff789a;
-    }
+body.dark-mode nav {
+    background: #2a1a3a;
+    box-shadow: 0 2px 12px #00000066;
+}
 
-    /* ===== MEMBROS ===== */
-    .card-membro {
-        background: #2a1a3a;
+body.dark-mode nav a:hover {
+    color: #ff789a;
+    background: #4a2a5a;
+}
 
-        h4 {
-            color: #ce54a9;
-        }
+body.dark-mode .card h3 {
+    color: #ff789a;
+    border-left-color: #ff789a;
+}
 
-        p {
-            color: #b8b8d0;
-        }
-    }
+body.dark-mode .card-membro h4 {
+    color: #ce54a9;
+}
 
-    .grid-monitores1 .card-membro h4,
-    .grid-monitores2 .card-membro h4 {
-        color: #ff789a;
-    }
+body.dark-mode .grid-monitores1 .card-membro h4,
+body.dark-mode .grid-monitores2 .card-membro h4 {
+    color: #ff789a;
+}
 
-    /* ===== LINKS SOCIAIS ===== */
-    .social-link {
-        background: #2a1a3a;
-        color: #ff789a;
-    }
+body.dark-mode .card-membro p,
+body.dark-mode aside p {
+    color: #b8b8d0;
+}
 
-    .social-link:hover {
-        background: #ff4980;
-        color: #1e1e32;
-    }
+body.dark-mode .social-link {
+    color: #ff789a;
+    background: #2a1a3a;
+}
 
-    /* ===== ASIDE ===== */
-    .aside-card {
-        background: #1e1e32;
-        border-left-color: var(--purpura-claro);
-    }
+body.dark-mode .social-link:hover {
+    color: #1e1e32;
+    background: #ff4980;
+}
 
-    .aside-card h4 {
-        color: var(--purpura-claro);
-    }
+body.dark-mode aside h3 {
+    color: var(--purpura-claro);
+}
 
-    .aside-card p {
-        color: #b8b8d0;
-    }
+body.dark-mode .sidebar-toggle {
+    background: #5a2a5a;
+}
 
-    .sidebar-toggle {
-        background: #5a2a5a;
-    }
+body.dark-mode .sidebar-toggle:hover {
+    background: #7a3a7a;
+}
 
-    /* ===== FOOTER ===== */
-    footer {
-        background-color: #000000;
-        color: #8888aa;
+body.dark-mode footer {
+    color: #8888aa;
+    background: #000000;
+}
 
-        a {
-            color: #ff789a;
-        }
+body.dark-mode footer a {
+    color: #ff789a;
+}
 
-        a:hover {
-            color: #ffc2d6;
-        }
-    }
+body.dark-mode footer a:hover {
+    color: #ffc2d6;
 }

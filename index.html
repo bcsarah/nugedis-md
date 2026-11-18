@@ -1,11 +1,8 @@
-<!-- Index HTML -->
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<!-- Head -->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NUGEDIS Marechal</title>
 
     <!-- Favicons -->
@@ -17,179 +14,156 @@
     <link rel="shortcut icon" href="images/favicon/favicon.ico">
     <link rel="manifest" href="images/favicon/site.webmanifest">
 
-    <!-- CSS Externo -->
     <link rel="stylesheet" href="style/main.css">
+    <script src="script/script.js" defer></script>
 </head>
 
-<!-- Body -->
 <body>
-    <!-- Tela de Loading -->
+    <!-- Tela de carregamento -->
     <div id="loading">
         <div class="loader"></div>
         <p>Carregando...</p>
     </div>
 
-    <!-- Cabeçalho -->
     <header>
-        <img src="images/logo-branca.png" alt="Logo Branca NUGEDIS Marechal Deodoro">
+        <img src="images/logo-branca.png" alt="Logo do NUGEDIS Marechal Deodoro">
         <h1>NUGEDIS</h1>
         <h2>Núcleo de Gênero, Diversidade e Sexualidade</h2>
         <h2>IFAL - Campus Marechal Deodoro (MD)</h2>
     </header>
 
-    <!-- Navegador -->
-    <nav>
+    <nav aria-label="Navegação principal">
         <a href="#sobre">Sobre</a>
         <a href="#atividades">Atividades</a>
         <a href="#equipe">Equipe</a>
         <a href="#contato">Contato</a>
     </nav>
 
-    <!-- Main -->
     <main>
-
-        <!-- Aside -->
         <aside class="card">
-
-            <!-- Botão Toggle -->
-            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir/fechar barra lateral">
-                <span class="toggle-text">Fechar</span>
+            <button
+                class="sidebar-toggle"
+                id="sidebarToggle"
+                type="button"
+                aria-label="Abrir/fechar barra lateral"
+                aria-expanded="false"
+            >
+                <span class="toggle-text">Abrir</span>
             </button>
 
-            <!-- Próximas Atividades -->
             <h3>Próximas Atividades</h3>
             <p>Não temos nenhuma atividade marcada. Volte após nossa reunião mensal!</p>
-            <br>
 
-            <!-- Links Sociais -->
             <div class="social-grid">
-                <a href="https://www.instagram.com/nugedis.marechal" target="_blank" class="social-link">Instagram</a>
-                <a href="https://www2.ifal.edu.br/campus/marechal" target="_blank" class="social-link">Site do Campus</a>
-                <a href="https://github.com/bcsarah/nugedis-md" target="_blank" class="social-link">Github</a>
+                <a href="https://www.instagram.com/nugedis.marechal" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
+                <a href="https://www2.ifal.edu.br/campus/marechal" target="_blank" rel="noopener noreferrer" class="social-link">Site do Campus</a>
+                <a href="https://github.com/bcsarah/nugedis-md" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
             </div>
         </aside>
 
-        <!-- Sobre -->
         <section id="sobre" class="card">
             <h3>Sobre</h3>
-
-            <p>O Núcleo de Gênero, Diversidade e Sexualidade (NUGEDIS) do Campus Marechal Deodoro é um espaço de acolhimento, formação e combate contra a LGBTQIAPN+fobia e o machismo. Trabalhamos para promover respeito às formas de sexualidade, identidades de gênero e para construir um ambiente escolar mais inclusivo e seguro para todes.</p><br>
+            <p>O Núcleo de Gênero, Diversidade e Sexualidade (NUGEDIS) do Campus Marechal Deodoro é um espaço de acolhimento, formação e combate contra a LGBTQIAPN+fobia e o machismo. Trabalhamos para promover respeito às formas de sexualidade, identidades de gênero e para construir um ambiente escolar mais inclusivo e seguro para todes.</p>
             <p><strong>Venha participar!</strong> Todas as pessoas são bem-vindes, independentemente de orientação sexual ou identidade de gênero. Juntos nós fortalecemos o respeito e combateremos o preconceito.</p>
         </section>
 
-        <!-- Equipe -->
         <section id="equipe" class="card">
-            <!-- Coordenadores -->
             <h3>Coordenadores</h3>
 
             <div class="grid-membros grid-coordenadores">
                 <div class="card-membro">
-                    <img src="images/membros/diogo.jpg" alt="Diogo">
+                    <img src="images/membros/diogo.jpg" alt="Diogo Souza">
                     <h4>Diogo Souza</h4>
                     <p>Educador que acredita no poder transformador que a Escola possui nas comunidades. Cinéfilo, leitor, militante e defensor dos Direitos Humanos.</p>
                 </div>
 
                 <div class="card-membro">
-                    <img src="images/membros/dartagnan.jpg" alt="Dartagnan">
+                    <img src="images/membros/dartagnan.jpg" alt="Dartagnan Macêdo">
                     <h4>Dartagnan Macêdo</h4>
                     <p>Professor e Psicólogo, pesquisador na área de Políticas Públicas e Educação Inclusiva.</p>
                 </div>
             </div>
 
-            <br>
+            <div class="separador-secao"></div>
 
-            <!-- Monitores -->
             <h3>Monitores</h3>
 
             <div class="grid-membros grid-monitores1">
                 <div class="card-membro">
-                    <img src="images/membros/cecilia.jpg" alt="Cecília">
+                    <img src="images/membros/cecilia.jpg" alt="Cecília Fernanda">
                     <h4>Cecília Fernanda</h4>
                     <p>3° Ano "A" - Guia de Turismo</p>
                 </div>
 
                 <div class="card-membro">
-                    <img src="images/membros/felipe.jpg" alt="Felipe">
+                    <img src="images/membros/felipe.jpg" alt="Felipe Weiler">
                     <h4>Felipe Weiler</h4>
                     <p>3° Ano "A" - Meio Ambiente</p>
                 </div>
 
                 <div class="card-membro">
-                    <img src="images/membros/alexandre.jpg" alt="Alexandre">
+                    <img src="images/membros/alexandre.jpg" alt="Alexandre Pimentel">
                     <h4>Alexandre Pimentel</h4>
                     <p>2° Ano "B" - Meio Ambiente</p>
                 </div>
-
             </div>
 
             <div class="grid-membros grid-monitores2">
                 <div class="card-membro">
-                    <img src="images/membros/weryka.jpg" alt="Weryka">
+                    <img src="images/membros/weryka.jpg" alt="Weryka Layany">
                     <h4>Weryka Layany</h4>
                     <p>2° Ano "A" - Guia de Turismo</p>
                 </div>
 
                 <div class="card-membro">
-                    <img src="images/membros/isis.jpg" alt="Ísis">
-                    <h4>ísis Melissa</h4>
+                    <img src="images/membros/isis.jpg" alt="Ísis Melissa">
+                    <h4>Ísis Melissa</h4>
                     <p>2° Ano "B" - Meio Ambiente</p>
                 </div>
             </div>
         </section>
 
-        <!-- Atividades -->
         <section id="atividades" class="card">
             <h3>Atividades Passadas</h3>
 
             <ul>
-                <li>🧡 <a href="https://www.instagram.com/nugedis.marechal/p/DZIz_VulKrN/" target="_blank">Oficina de Produção de Moda</a> - 02/06</li>
-                <li>🎥 <a href="https://www.instagram.com/p/DZnoNFNFPcL/" target="_blank">Cine NUGEDIS</a> - 10/06, no <a href="https://www.instagram.com/artepajucara/" target="_blank">Cine Arte Pajuçara</a></li>
-                <li>🎤 <a href="https://www.instagram.com/nugedis.marechal/p/DaRDIvdlFAG/" target="_blank">Karaokê</a> - 17/06</li>
-                <li>🏐 <a href="https://www.instagram.com/nugedis.marechal/p/Da5avRhjlfc/" target="_blank">Gaymado</a> - 19/06, com a presença de <a href="https://www.instagram.com/skarllet_fucksia/" target="_blank">Skarllet Fuck'Sia</a></li>
-                <li>🍃 <a href="https://www.instagram.com/aldeiaverdemcz/p/DbtT1haEauH/" target="_blank">Visita Técnica à Reserva Natural Aldeia Verde</a> - 06/08</li>
-                <li>💜 <a href="https://www.instagram.com/nugedis.marechal/p/DbwU6i7ByEP/" target="_blank">Roda de Conversa Agosto Lilás</a> - 11/08</li>
-                <li>🏅 <a href="https://www.instagram.com/p/DcWcu63lLk9/?exln=ajZvN2wwMDlqZXdn" target="_blank">Apresentação nos 12° Jogos Internos, em conjunto a outros núcleos</a> - 17/08</li>
-                <li>🌈 <a href="https://www.instagram.com/p/DcrhgKYlDHU/" target="_blank">Post e Cartaz "Onde estão as Lésbicas?"</a> - 30/08</li>
-                <li>🎗️ <a href="https://www.instagram.com/p/Dd4J2MyFIvk/" target="_blank">Post sobre o Setembro Amarelo</a> - 29/09</li>
+                <li>🧡 <a href="https://www.instagram.com/nugedis.marechal/p/DZIz_VulKrN/" target="_blank" rel="noopener noreferrer">Oficina de Produção de Moda</a> - 02/06</li>
+                <li>🎥 <a href="https://www.instagram.com/p/DZnoNFNFPcL/" target="_blank" rel="noopener noreferrer">Cine NUGEDIS</a> - 10/06, no <a href="https://www.instagram.com/artepajucara/" target="_blank" rel="noopener noreferrer">Cine Arte Pajuçara</a></li>
+                <li>🎤 <a href="https://www.instagram.com/nugedis.marechal/p/DaRDIvdlFAG/" target="_blank" rel="noopener noreferrer">Karaokê</a> - 17/06</li>
+                <li>🏐 <a href="https://www.instagram.com/nugedis.marechal/p/Da5avRhjlfc/" target="_blank" rel="noopener noreferrer">Gaymado</a> - 19/06, com a presença de <a href="https://www.instagram.com/skarllet_fucksia/" target="_blank" rel="noopener noreferrer">Skarllet Fuck'Sia</a></li>
+                <li>🍃 <a href="https://www.instagram.com/aldeiaverdemcz/p/DbtT1haEauH/" target="_blank" rel="noopener noreferrer">Visita Técnica à Reserva Natural Aldeia Verde</a> - 06/08</li>
+                <li>💜 <a href="https://www.instagram.com/nugedis.marechal/p/DbwU6i7ByEP/" target="_blank" rel="noopener noreferrer">Roda de Conversa Agosto Lilás</a> - 11/08</li>
+                <li>🏅 <a href="https://www.instagram.com/p/DcWcu63lLk9/?exln=ajZvN2wwMDlqZXdn" target="_blank" rel="noopener noreferrer">Apresentação nos 12° Jogos Internos, em conjunto a outros núcleos</a> - 17/08</li>
+                <li>🌈 <a href="https://www.instagram.com/p/DcrhgKYlDHU/" target="_blank" rel="noopener noreferrer">Post e Cartaz "Onde estão as Lésbicas?"</a> - 30/08</li>
+                <li>🎗️ <a href="https://www.instagram.com/p/Dd4J2MyFIvk/" target="_blank" rel="noopener noreferrer">Post sobre o Setembro Amarelo</a> - 29/09</li>
             </ul>
 
-            <p>Para mais informações, se torne um membro Nugedis ou nos siga no nosso <a href="https://www.instagram.com/nugedis.marechal" target="_blank">Instagram</a>.</p>
+            <p>Para mais informações, se torne um membro Nugedis ou nos siga no nosso <a href="https://www.instagram.com/nugedis.marechal" target="_blank" rel="noopener noreferrer">Instagram</a>.</p>
         </section>
 
-        <!-- Contato -->
         <section id="contato" class="card">
             <h3>Inicie aqui!</h3>
-
             <p>Estamos abertos a docentes e discentes! Você pode contribuir com ideias, arte, pesquisa ou simplesmente participar das nossas atividades e reuniões.</p>
-            <br>
             <p><strong>Reuniões:</strong> Mensais, a definir pelo professor Diogo Souza.</p>
-            <p><strong>Contato:</strong> Com qualquer monitor, coordenador do núcleo. Aceitamos contato pelo e-mail <a>nugedis.marechal@ifal.edu.br</a>.</p>
+            <p><strong>Contato:</strong> Com qualquer monitor, coordenador do núcleo. Aceitamos contato pelo e-mail <a href="mailto:nugedis.marechal@ifal.edu.br">nugedis.marechal@ifal.edu.br</a>.</p>
         </section>
-
     </main>
 
-    <!-- Rodapé -->
     <footer>
         <p>NUGEDIS - Núcleo de Gênero, Diversidade e Sexualidade | IFAL Campus Marechal Deodoro</p>
         <p>Luta contra LGBTQIAPN+fobia, machismo e todas as opressões.</p>
 
-        <br>
-        <a href="https://www.instagram.com/nugedis.marechal" target="_blank">Instagram</a> |
-        <a href="https://www2.ifal.edu.br/campus/marechal" target="_blank">Site do Campus</a> |
-        <a href="https://github.com/bcsarah/nugedis-md" target="_blank">Github</a>
+        <div class="links-rodape">
+            <a href="https://www.instagram.com/nugedis.marechal" target="_blank" rel="noopener noreferrer">Instagram</a> |
+            <a href="https://www2.ifal.edu.br/campus/marechal" target="_blank" rel="noopener noreferrer">Site do Campus</a> |
+            <a href="https://github.com/bcsarah/nugedis-md" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
 
-        <p style="margin-top: 0.8rem;">Este site é livre e de código aberto. Acesse-o <a href="https://github.com/bcsarah/nugedis-md" target="_blank">aqui</a>.</p>
-        <p>&copy; 2026 - Desenvolvido por <a href="https://github.com/bcsarah" target="_blank">Sarah Aurora B. Alencar</a>.</p>
+        <p>Este site é livre e de código aberto. Acesse-o <a href="https://github.com/bcsarah/nugedis-md" target="_blank" rel="noopener noreferrer">aqui</a>.</p>
+        <p>&copy; 2026 - Desenvolvido por <a href="https://github.com/bcsarah" target="_blank" rel="noopener noreferrer">Sarah Aurora B. Alencar</a>.</p>
     </footer>
-    
-    <!-- Botão Voltar ao Topo -->
-    <button id="btnTopo" title="Voltar ao topo">↑</button>
 
-    <!-- Botão Modo Escuro -->
-    <button id="darkModeToggle" class="btn-dark-mode" aria-label="Alternar modo escuro">🌙</button>
-
-    <!-- JS Externo -->
-    <script src="script/script.js"></script>
+    <button id="btnTopo" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">↑</button>
+    <button id="darkModeToggle" class="btn-dark-mode" type="button" aria-label="Ativar modo escuro" aria-pressed="false">🌙</button>
 </body>
-
 </html>
